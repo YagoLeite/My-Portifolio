@@ -1,21 +1,9 @@
 import React, { useState } from "react";
-import {
-  Box,
-  Flex,
-  Grid,
-  Text,
-  useDisclosure,
-  Modal,
-  ModalOverlay,
-  ModalHeader,
-  ModalBody,
-  ModalFooter,
-  ModalContent,
-  Lorem,
-} from "@chakra-ui/react";
+import { Box, Flex, Grid, Text, useDisclosure } from "@chakra-ui/react";
 import Header from "../../components/Header/Header";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import ProjectModal from "../../components/projects/ProjectModal";
+import Modal from "../../components/Modal/Modal";
 
 const projects = [
   {
@@ -50,7 +38,7 @@ const testando = (index) => {
       opacity: 0,
       x: index % 2 !== 0 ? 150 : -150,
     },
-    show: {
+    visible: {
       opacity: 1,
       x: 0,
       transition: {
@@ -66,9 +54,33 @@ const testando = (index) => {
 };
 
 const container = {
-  show: {
+  visible: {
     transition: {
       staggerChildren: 0.55,
+    },
+  },
+};
+
+const flip = {
+  hidden: {
+    transform: "scale(0) rotateX(-360deg)",
+    opacity: 0,
+    transition: {
+      delay: 0.3,
+    },
+  },
+  visible: {
+    transform: " scale(1) rotateX(0deg)",
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+    },
+  },
+  exit: {
+    transform: "scale(0) rotateX(360deg)",
+    opacity: 0,
+    transition: {
+      duration: 0.5,
     },
   },
 };
@@ -80,8 +92,10 @@ const index = () => {
     setprojeto(project);
     func();
   };
+  const [a, setA] = useState(false);
+
   return (
-    <Box color="white" bg="#1e2029" h="3000px">
+    <Box color="white" bg="#1e2029" h="3000px" overflow="hidden">
       <Header />
       <Flex w="100%" justify="center">
         <Grid
@@ -91,7 +105,7 @@ const index = () => {
           as={motion.div}
           variants={container}
           initial="hidden"
-          animate="show"
+          animate="visible"
           exit="exit"
         >
           {projects.map((project, index) => {
@@ -109,7 +123,6 @@ const index = () => {
                   </Flex>
                   <Box>
                     <Text>Title: {project.title}</Text>
-
                     <Text>Demo: {project.demo} </Text>
                     <Text>GitHub: {project.github} </Text>
                   </Box>
@@ -119,7 +132,22 @@ const index = () => {
           })}
         </Grid>
       </Flex>
-      <ProjectModal config={projeto} isOpen={isOpen} onClose={onClose} />
+
+      <Flex onClick={() => setA((p) => !p)}>EITA PORRA</Flex>
+      <AnimatePresence initial={false} exitBeforeEnter={true}>
+        {a && (
+          <motion.div
+            variants={flip}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+          >
+            <ProjectModal config={projeto} isOpen={isOpen} onClose={onClose} />
+            <Flex h="200px" w="200px" bg="red" />
+          </motion.div>
+        )}
+        {isOpen && <Modal closeHandler={onClose} />}
+      </AnimatePresence>
     </Box>
   );
 };
