@@ -12,6 +12,8 @@ import { useInView } from "react-intersection-observer";
 import Project from "../../components/projects/Project";
 import { projects } from "../../constans/Constants";
 import Hero from "../../components/Hero/Hero";
+import AnimCursor from "../../components/AnimCursor";
+import AboutMe from "../../components/AboutMe/AboutMe";
 
 const testando = (index) => {
   return {
@@ -86,36 +88,36 @@ const index = () => {
 
   return (
     <Box color="white" bg="#1e2029" h="3000px" overflow="hidden">
+      <AnimCursor />
       <Header />
       <Hero />
+      <AboutMe />
       <Flex h="700px"></Flex>
       <Flex ref={ref} w="100%" justify="center">
-        <AnimatePresence>
-          <Grid
-            gridTemplateColumns="repeat(auto-fit, minmax(330px, 1fr))"
-            gap="24px"
-            maxW="800px"
-            as={motion.div}
-            variants={container}
-            initial="hidden"
-            animate="visible"
-            exit="exit"
-            ref={ref}
-          >
-            {projects.map((project, index) => {
-              return (
-                <Project
-                  project={project}
-                  index={index}
-                  onOpen={onOpen}
-                  testando={testando}
-                  controls={controls}
-                  openningModal={openningModal}
-                />
-              );
-            })}
-          </Grid>
-        </AnimatePresence>
+        <Grid
+          gridTemplateColumns="repeat(auto-fit, minmax(330px, 1fr))"
+          gap="24px"
+          maxW="800px"
+          as={motion.div}
+          variants={container}
+          initial="hidden"
+          animate="visible"
+          exit="exit"
+          ref={ref}
+        >
+          {projects.map((project, index) => {
+            return (
+              <Project
+                project={project}
+                index={index}
+                onOpen={onOpen}
+                testando={testando}
+                controls={controls}
+                openningModal={openningModal}
+              />
+            );
+          })}
+        </Grid>
       </Flex>
 
       {/* <Flex onClick={() => setA((p) => !p)}>EITA PORRA</Flex>
