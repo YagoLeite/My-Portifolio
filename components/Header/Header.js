@@ -6,7 +6,7 @@ import Link from "next/link";
 const Header = () => {
   const router = useRouter();
   return (
-    <Flex minH="40px" h="1000px" alignItems="center" justify="space-around">
+    <Flex minH="40px" h="100px" alignItems="center" justify="space-around">
       <Link href="/">Logo</Link>
       <Flex gap="8px" justify="space-between">
         <Flex

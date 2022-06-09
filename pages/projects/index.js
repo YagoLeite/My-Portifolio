@@ -11,6 +11,7 @@ import Modal from "../../components/Modal/Modal";
 import { useInView } from "react-intersection-observer";
 import Project from "../../components/projects/Project";
 import { projects } from "../../constans/Constants";
+import Hero from "../../components/Hero/Hero";
 
 const testando = (index) => {
   return {
@@ -86,6 +87,8 @@ const index = () => {
   return (
     <Box color="white" bg="#1e2029" h="3000px" overflow="hidden">
       <Header />
+      <Hero />
+      <Flex h="700px"></Flex>
       <Flex ref={ref} w="100%" justify="center">
         <AnimatePresence>
           <Grid
