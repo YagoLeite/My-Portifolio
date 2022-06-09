@@ -38,23 +38,15 @@ const WavyText = ({ text, delayDuration, fontSize }) => {
       variants={container}
       initial="hidden"
       animate="visible"
-      w="100%"
-      justify="center"
+      justify="left"
       overflow="hidden"
       as={motion.div}
     >
       {text.split("").map((letter, index) => {
         return (
-          <Flex
-            // whileHover={{ scale: 2 }}
-            as={motion.div}
-            variants={child}
-            key={index}
-            justify="center"
-            alignItems="center"
-          >
+          <Flex as={motion.div} variants={child} key={index}>
             {letter === " " ? (
-              <Text opacity={0}>a</Text>
+              <Text opacity={0}>aa</Text>
             ) : (
               <Text
                 as={motion.div}
