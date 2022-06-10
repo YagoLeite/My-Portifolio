@@ -1,6 +1,6 @@
 import React from "react";
 import { Flex, Text } from "@chakra-ui/react";
-import { motion, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 
 const WavyText = ({ text, delayDuration, fontSize }) => {
   const container = {

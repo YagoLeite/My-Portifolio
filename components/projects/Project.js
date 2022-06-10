@@ -3,8 +3,10 @@ import { Flex, Box, Text } from "@chakra-ui/react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const Project = ({ project, index, testando, controls }) => {
+  const router = useRouter();
   return (
     <Flex
       key={index}
@@ -13,6 +15,7 @@ const Project = ({ project, index, testando, controls }) => {
       variants={testando(index)}
       animate={controls}
       whileHover={{ scale: 1.1 }}
+      onClick={() => router.push(project.title)}
     >
       <Flex overflow="hidden">
         <Image objectFit="cover" src={project.img} />

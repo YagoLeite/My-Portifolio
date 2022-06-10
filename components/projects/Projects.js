@@ -1,6 +1,6 @@
 import React from "react";
 import Project from "./Project";
-import { Grid } from "@chakra-ui/react";
+import { Flex, Grid } from "@chakra-ui/react";
 import { motion, useAnimation } from "framer-motion";
 import { projects } from "../../constans/Constants";
 import { useInView } from "react-intersection-observer";
@@ -46,28 +46,30 @@ const Projects = () => {
   }
 
   return (
-    <Grid
-      gridTemplateColumns="repeat(auto-fit, minmax(330px, 1fr))"
-      gap="24px"
-      maxW="800px"
-      as={motion.div}
-      variants={container}
-      initial="hidden"
-      animate="visible"
-      exit="exit"
-      ref={ref}
-    >
-      {projects.map((project, index) => {
-        return (
-          <Project
-            project={project}
-            index={index}
-            testando={testando}
-            controls={controls}
-          />
-        );
-      })}
-    </Grid>
+    <Flex w="100%" justifyContent="center">
+      <Grid
+        gridTemplateColumns="repeat(auto-fit, minmax(330px, 1fr))"
+        gap="24px"
+        maxW="800px"
+        as={motion.div}
+        variants={container}
+        initial="hidden"
+        animate="visible"
+        exit="exit"
+        ref={ref}
+      >
+        {projects.map((project, index) => {
+          return (
+            <Project
+              project={project}
+              index={index}
+              testando={testando}
+              controls={controls}
+            />
+          );
+        })}
+      </Grid>
+    </Flex>
   );
 };
 
