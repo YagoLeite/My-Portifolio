@@ -4,27 +4,15 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
-const Project = ({
-  project,
-  index,
-  onOpen,
-  testando,
-  controls,
-  openningModal,
-}) => {
-  const [selectedID, setSelectedID] = useState(null);
+const Project = ({ project, index, testando, controls }) => {
   return (
     <Flex
-      onClick={() => {
-        openningModal(project, onOpen);
-      }}
       key={index}
       direction="column"
       as={motion.div}
       variants={testando(index)}
       animate={controls}
       whileHover={{ scale: 1.1 }}
-      // layoutId={project.title}
     >
       <Flex overflow="hidden">
         <Image objectFit="cover" src={project.img} />
