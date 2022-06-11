@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Flex, Box, Text } from "@chakra-ui/react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
