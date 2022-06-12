@@ -1,8 +1,9 @@
 import React from "react";
 import { Flex, Text } from "@chakra-ui/react";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 
 const WavyText = ({ text, delayDuration, fontSize }) => {
+  const controls = useAnimation();
   const container = {
     hidden: {
       opacity: 0,
@@ -33,6 +34,12 @@ const WavyText = ({ text, delayDuration, fontSize }) => {
       },
     },
   };
+
+  const bump = {
+    y: ["0px", "-8px", "4px", "0px"],
+    scale: [1, 1.2, 1.1, 1],
+    transition: { duration: 0.4, type: "spring" },
+  };
   return (
     <Flex
       variants={container}
@@ -51,11 +58,13 @@ const WavyText = ({ text, delayDuration, fontSize }) => {
               <Text
                 as={motion.div}
                 fontSize={fontSize}
+                key={Math.random()}
                 whileHover={{
                   y: ["0px", "-8px", "4px", "0px"],
                   scale: [1, 1.2, 1.1, 1],
                   transition: { duration: 0.4, type: "spring" },
                 }}
+                // variants={bump}
               >
                 {letter}
               </Text>

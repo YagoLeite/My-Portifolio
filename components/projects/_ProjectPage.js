@@ -64,23 +64,48 @@ const _ProjectPage = () => {
       {project && (
         <Flex justify="center">
           <Text> {project.textOne} </Text>
-          <AnimatePresence>
-            <Flex
-              position="absolute"
-              top="50%"
-              left="50%"
-              as={motion.div}
-              key={Math.random()}
-              variants={fadeImg}
-              initial="hidden"
-              animate="visible"
-              exit="exit"
-              justify="center"
-              overflow="hidden"
-            >
-              <Image objectFit="cover" src={project.img} />
-            </Flex>
-          </AnimatePresence>
+          <Flex
+            w="100%"
+            as={motion.div}
+            onHoverStart={() => setIsHovering(true)}
+            onHoverEnd={() => setIsHovering(false)}
+          >
+            <AnimatePresence>
+              {!isHovering ? (
+                <Flex
+                  position="absolute"
+                  top="50%"
+                  left="50%"
+                  as={motion.div}
+                  key={Math.random()}
+                  variants={fadeImg}
+                  initial="hidden"
+                  animate="visible"
+                  exit="exit"
+                  justify="center"
+                  overflow="hidden"
+                >
+                  <Image objectFit="cover" src={project.img} />
+                </Flex>
+              ) : (
+                <Flex
+                  position="absolute"
+                  top="50%"
+                  left="50%"
+                  as={motion.div}
+                  key={Math.random()}
+                  variants={fadeImg}
+                  initial="hidden"
+                  animate="visible"
+                  exit="exit"
+                  justify="center"
+                  overflow="hidden"
+                >
+                  <Image objectFit="cover" src={project.imgOne} />
+                </Flex>
+              )}
+            </AnimatePresence>
+          </Flex>
         </Flex>
       )}
       <Box onClick={() => router.push(nextProject.title)}>Next project</Box>
