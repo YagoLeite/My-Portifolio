@@ -7,9 +7,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <ChakraProvider>
       <AnimCursor />
-      <AnimatePresence>
-        <Component {...pageProps} />
-      </AnimatePresence>
+      <Component {...pageProps} />
     </ChakraProvider>
   );
 }

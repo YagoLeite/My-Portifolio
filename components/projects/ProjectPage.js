@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { motion, useAnimation } from "framer-motion";
+import { AnimatePresence, motion, useAnimation } from "framer-motion";
 import { useRouter } from "next/router";
 import { Box, Flex, Text } from "@chakra-ui/react";
 import { projects } from "../../constans/Constants";
@@ -10,7 +10,8 @@ const ProjectPage = () => {
   const router = useRouter();
   const [project, setProject] = useState(null);
   const [isHovering, setIsHovering] = useState(false);
-  const [refOne, isInViewOne] = useInView();
+  const [refOne, isInViewOne] = useInView({ threshold: 0.2 });
+  const [refTwo, isInViewTwo] = useInView({ threshold: 0.2 });
   const controls = useAnimation();
   const name = router.query.projects;
 
@@ -45,54 +46,59 @@ const ProjectPage = () => {
     },
   };
 
-  if (isInViewOne) {
-    controls.start("visible");
-  }
-  if (!isInViewOne) {
-    controls.start("exit");
-  }
-
   return (
-    <Box color="white" w="100%">
-      {project && (
-        <Flex w="100%">
-          <Text>{project.textOne}</Text>
-          <Flex
-            as={motion.div}
-            onHoverStart={() => setIsHovering(true)}
-            onHoverEnd={() => setIsHovering(false)}
-            ref={refOne}
-          >
-            {isHovering ? (
-              <Flex
-                key={Math.random()}
-                as={motion.div}
-                variants={fadeImg}
-                initial="hidden"
-                animate={controls}
-                exit="exit"
-                overflow="hidden"
-              >
-                <Image objectFit="cover" src={project.imgOne} />
-              </Flex>
-            ) : (
-              <Flex
-                key={Math.random()}
-                as={motion.div}
-                variants={fadeImg}
-                initial="hidden"
-                animate="visible"
-                exit="exit"
-                overflow="hidden"
-              >
-                <Image objectFit="cover" src={project.img} />
-              </Flex>
-            )}
+    <AnimatePresence>
+      <Flex
+        as={motion.div}
+        key={Math.random()}
+        variants={fadeImg}
+        initial="hidden"
+        animate="visible"
+        exit="exit"
+        direction="column"
+        spacing="2000px"
+        color="white"
+        w="100%"
+      >
+        {project && (
+          <Flex as={motion.div} w="100%">
+            <Text>{project.textOne}</Text>
+            <Flex
+              as={motion.div}
+              onHoverStart={() => setIsHovering(true)}
+              onHoverEnd={() => setIsHovering(false)}
+            >
+              {isHovering ? (
+                <Flex
+                  key={Math.random()}
+                  as={motion.div}
+                  variants={fadeImg}
+                  initial="hidden"
+                  animate="visible"
+                  exit="exit"
+                  overflow="hidden"
+                >
+                  <Image objectFit="cover" src={project.imgOne} />
+                </Flex>
+              ) : (
+                <Flex
+                  key={Math.random()}
+                  as={motion.div}
+                  variants={fadeImg}
+                  initial="hidden"
+                  animate="visible"
+                  exit="exit"
+                  overflow="hidden"
+                >
+                  <Image objectFit="cover" src={project.img} />
+                </Flex>
+              )}
+            </Flex>
           </Flex>
-        </Flex>
-      )}
-      <Box onClick={() => router.push(nextProject.title)}>Next project</Box>
-    </Box>
+        )}
+        <Box onClick={() => router.push(nextProject.title)}>Next project</Box>
+      </Flex>
+    </AnimatePresence>
   );
 };
 

@@ -6,7 +6,7 @@ import Projects from "../components/projects/Projects";
 
 export default function Home() {
   return (
-    <Box color="white" h="3000px" bg="#1e2029">
+    <Box color="white" h="20000px" bg="#1e2029">
       <Header />
       <Hero />
       <AboutMe />
