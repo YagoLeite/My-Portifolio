@@ -36,9 +36,11 @@ const WavyText = ({ text, delayDuration, fontSize }) => {
   };
 
   const bump = {
-    y: ["0px", "-8px", "4px", "0px"],
-    scale: [1, 1.2, 1.1, 1],
-    transition: { duration: 0.4, type: "spring" },
+    visible: {
+      y: ["0px", "-8px", "4px", "0px"],
+      scale: [1, 1.2, 1.1, 1],
+      transition: { duration: 0.4, type: "spring" },
+    },
   };
   return (
     <Flex
@@ -65,6 +67,10 @@ const WavyText = ({ text, delayDuration, fontSize }) => {
                   transition: { duration: 0.4, type: "spring" },
                 }}
                 // variants={bump}
+                // animate={controls}
+                // onHoverStart={() => {
+                //   controls.start(bump.visible);
+                // }}
               >
                 {letter}
               </Text>
