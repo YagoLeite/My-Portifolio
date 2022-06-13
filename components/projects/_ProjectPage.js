@@ -48,15 +48,56 @@ const _ProjectPage = () => {
   };
 
   return (
-    <Flex
-      direction="column"
-      position="relative"
-      spacing="2000px"
-      color="white"
-      w="100%"
-    >
+    <Flex direction="column" gap="1000px" color="white" w="100%">
       {project && (
-        <Flex justify="center" w="100%">
+        <Flex justify="center" position="relative" w="100%">
+          <Text w="100%"> {project.textOne} </Text>
+          <Flex
+            w="100%"
+            as={motion.div}
+            onHoverStart={() => setIsHovering(true)}
+            onHoverEnd={() => setIsHovering(false)}
+          >
+            <AnimatePresence>
+              {!isHovering ? (
+                <Flex
+                  position="absolute"
+                  top="0%"
+                  left="50%"
+                  as={motion.div}
+                  key={Math.random()}
+                  variants={fadeImg}
+                  initial="hidden"
+                  animate="visible"
+                  exit="exit"
+                  justify="center"
+                  overflow="hidden"
+                >
+                  <Image objectFit="cover" src={project.img} />
+                </Flex>
+              ) : (
+                <Flex
+                  position="absolute"
+                  top="0%"
+                  left="50%"
+                  as={motion.div}
+                  key={Math.random()}
+                  variants={fadeImg}
+                  initial="hidden"
+                  animate="visible"
+                  exit="exit"
+                  justify="center"
+                  overflow="hidden"
+                >
+                  <Image objectFit="cover" src={project.imgOne} />
+                </Flex>
+              )}
+            </AnimatePresence>
+          </Flex>
+        </Flex>
+      )}
+      {project && (
+        <Flex justify="center" position="relative" w="100%">
           <Text w="100%"> {project.textOne} </Text>
           <Flex
             w="100%"

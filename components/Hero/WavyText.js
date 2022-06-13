@@ -69,7 +69,11 @@ const WavyText = ({ text, delayDuration, fontSize }) => {
                 // variants={bump}
                 // animate={controls}
                 // onHoverStart={() => {
-                //   controls.start(bump.visible);
+                //   controls.start({
+                //     y: ["0px", "-8px", "4px", "0px"],
+                //     scale: [1, 1.2, 1.1, 1],
+                //     transition: { duration: 0.4, type: "spring" },
+                //   });
                 // }}
               >
                 {letter}
