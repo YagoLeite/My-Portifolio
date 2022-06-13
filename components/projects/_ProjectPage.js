@@ -34,24 +34,18 @@ const _ProjectPage = () => {
   const fadeImg = {
     hidden: {
       opacity: 0,
-      zIndex: 100,
     },
     visible: {
       opacity: 1,
-      zIndex: 0,
 
       transition: {
-        duration: 2,
+        duration: 1,
       },
     },
     exit: {
       opacity: 0,
-      zIndex: 100,
     },
   };
-
-  const [a, setA] = useState(true);
-  console.log(a);
 
   return (
     <Flex
@@ -62,8 +56,8 @@ const _ProjectPage = () => {
       w="100%"
     >
       {project && (
-        <Flex justify="center">
-          <Text> {project.textOne} </Text>
+        <Flex justify="center" w="100%">
+          <Text w="100%"> {project.textOne} </Text>
           <Flex
             w="100%"
             as={motion.div}
@@ -74,7 +68,7 @@ const _ProjectPage = () => {
               {!isHovering ? (
                 <Flex
                   position="absolute"
-                  top="50%"
+                  top="0%"
                   left="50%"
                   as={motion.div}
                   key={Math.random()}
@@ -90,7 +84,7 @@ const _ProjectPage = () => {
               ) : (
                 <Flex
                   position="absolute"
-                  top="50%"
+                  top="0%"
                   left="50%"
                   as={motion.div}
                   key={Math.random()}
