@@ -17,7 +17,6 @@ const ProjectDescription = (props) => {
 
       transition: {
         duration: 2,
-        delay: 0.4,
       },
     },
     exit: {
