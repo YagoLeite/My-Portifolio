@@ -104,6 +104,26 @@ const _ProjectPage = () => {
           imgOne={project.imgOne}
         />
       )}
+      <Flex
+        justify="center"
+        alignItems="center"
+        h="300px"
+        w="300px"
+        bg="blue"
+        borderRadius="50%"
+        as={motion.div}
+        animate={{
+          rotate: -360,
+          transition: {
+            duration: 10,
+            ease: "linear",
+            repeat: Infinity,
+          },
+        }}
+        key={Math.random()}
+      >
+        Rodando
+      </Flex>
       <Box onClick={() => router.push(nextProject.title)}>Next project</Box>
     </Flex>
     // <Box as={motion.div} position="relative" gap="20px">
