@@ -5,13 +5,14 @@ import { Box, Flex, Text } from "@chakra-ui/react";
 import { projects } from "../../constans/Constants";
 import Image from "next/image";
 import { useInView } from "react-intersection-observer";
+import ProjectDescription from "./ProjectDescription";
 
 const _ProjectPage = () => {
   const router = useRouter();
   const [project, setProject] = useState(null);
   const [isHovering, setIsHovering] = useState(false);
-  const [refOne, isInViewOne] = useInView({ threshold: 0.2 });
-  const [refTwo, isInViewTwo] = useInView({ threshold: 0.2 });
+  const [refOne, isInViewOne] = useInView();
+  const [refTwo, isInViewTwo] = useInView();
   const controls = useAnimation();
   const name = router.query.projects;
 
@@ -97,51 +98,11 @@ const _ProjectPage = () => {
         </Flex>
       )}
       {project && (
-        <Flex justify="center" position="relative" w="100%">
-          <Text w="100%"> {project.textOne} </Text>
-          <Flex
-            w="100%"
-            as={motion.div}
-            onHoverStart={() => setIsHovering(true)}
-            onHoverEnd={() => setIsHovering(false)}
-          >
-            <AnimatePresence>
-              {!isHovering ? (
-                <Flex
-                  position="absolute"
-                  top="0%"
-                  left="50%"
-                  as={motion.div}
-                  key={Math.random()}
-                  variants={fadeImg}
-                  initial="hidden"
-                  animate="visible"
-                  exit="exit"
-                  justify="center"
-                  overflow="hidden"
-                >
-                  <Image objectFit="cover" src={project.img} />
-                </Flex>
-              ) : (
-                <Flex
-                  position="absolute"
-                  top="0%"
-                  left="50%"
-                  as={motion.div}
-                  key={Math.random()}
-                  variants={fadeImg}
-                  initial="hidden"
-                  animate="visible"
-                  exit="exit"
-                  justify="center"
-                  overflow="hidden"
-                >
-                  <Image objectFit="cover" src={project.imgOne} />
-                </Flex>
-              )}
-            </AnimatePresence>
-          </Flex>
-        </Flex>
+        <ProjectDescription
+          textOne={project.textOne}
+          img={project.img}
+          imgOne={project.imgOne}
+        />
       )}
       <Box onClick={() => router.push(nextProject.title)}>Next project</Box>
     </Flex>
