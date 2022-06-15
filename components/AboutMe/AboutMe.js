@@ -8,7 +8,7 @@ const AboutMe = () => {
       <Box w="100%">
         <WavyText fontSize="72px" text="Welcome" delayDuration={1} />
         <Text>
-          I'm a Frontend developer based in Rio de Janeiro. Passionated about
+          Im a Frontend developer based in Rio de Janeiro. Passionated about
           creating complex features by combining simple and reusable functions
         </Text>
         <Text>

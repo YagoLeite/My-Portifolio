@@ -61,6 +61,7 @@ const Projects = () => {
         {projects.map((project, index) => {
           return (
             <Project
+              key={index}
               project={project}
               index={index}
               testando={testando}
