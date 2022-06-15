@@ -2,7 +2,9 @@ import { Flex, Text, Box } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import React from "react";
 import WavyText from "./WavyText";
-
+import { FaReact, FaHtml5 } from "react-icons/fa";
+import { SiJavascript, SiChakraui, SiTailwindcss } from "react-icons/si";
+import { FiFramer } from "react-icons/fi";
 const SpinningIcon = (props) => {
   return (
     <Flex
@@ -16,6 +18,7 @@ const SpinningIcon = (props) => {
       color="black"
       borderRadius="50%"
       as={motion.div}
+      whileHover={{ scale: 1.1 }}
       animate={{
         rotate: -360,
         transition: {
@@ -38,7 +41,7 @@ const container = {
   },
   visible: {
     opacity: 1,
-    transition: { staggerChildren: 0.25 },
+    transition: { staggerChildren: 0.35 },
   },
 };
 
@@ -93,14 +96,14 @@ const Hero = () => {
               <SpinningIcon
                 config={{ top: "calc(0% - 25px)", left: "calc(50% - 25px)" }}
               >
-                1
+                <FaReact />
               </SpinningIcon>
             </Box>
             <Box as={motion.div} variants={fading}>
               <SpinningIcon
                 config={{ top: "calc(25% - 25px)", left: "calc(6.7% - 25px)" }}
               >
-                2
+                <SiJavascript />
               </SpinningIcon>
             </Box>
             <Box as={motion.div} variants={fading}>
@@ -110,14 +113,14 @@ const Hero = () => {
                   left: "calc(6.7% - 25px)",
                 }}
               >
-                3
+                <FiFramer />
               </SpinningIcon>
             </Box>
             <Box as={motion.div} variants={fading}>
               <SpinningIcon
                 config={{ bottom: "calc(0% - 25px)", left: "calc(50% - 25px)" }}
               >
-                4
+                <FaHtml5 />
               </SpinningIcon>
             </Box>
             <Box as={motion.div} variants={fading}>
@@ -127,14 +130,14 @@ const Hero = () => {
                   right: "calc(6.7% - 25px)",
                 }}
               >
-                5
+                <SiChakraui />
               </SpinningIcon>
             </Box>
             <Box as={motion.div} variants={fading}>
               <SpinningIcon
                 config={{ top: "calc(25% - 25px)", right: "calc(6.7% - 25px)" }}
               >
-                6
+                <SiTailwindcss />
               </SpinningIcon>
             </Box>
           </Box>
