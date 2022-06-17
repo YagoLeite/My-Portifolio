@@ -1,10 +1,12 @@
 import { Flex, Text, Box } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import React from "react";
+import React, { useState } from "react";
 import WavyText from "./WavyText";
-import { FaReact, FaHtml5 } from "react-icons/fa";
+import { FaReact } from "react-icons/fa";
 import { SiJavascript, SiChakraui, SiTailwindcss } from "react-icons/si";
+import { TbBrandNextjs } from "react-icons/tb";
 import { FiFramer } from "react-icons/fi";
+import MeuBago from "./MeuBago";
 const SpinningIcon = (props) => {
   return (
     <Flex
@@ -57,9 +59,37 @@ const fading = {
   },
 };
 
+const findingAngles = (number) => {
+  const interiorAngle = (360 / number) * (Math.PI / 180);
+  let arrayOfAngles = [];
+  for (let i = 1; i <= number; i++) {
+    arrayOfAngles.push(i * interiorAngle);
+  }
+  return arrayOfAngles;
+};
+const arrayOfPositions = (array) => {
+  return array.map((angle) => {
+    return { x: Math.sin(angle) / 2, y: Math.cos(angle) / 2 };
+  });
+};
+const topAndLeft = (array) => {
+  return array.map((position) => {
+    return {
+      left: (0.5 - position.x) * 100,
+      top: (0.5 - position.y) * 100,
+    };
+  });
+};
+
 const Hero = () => {
+  const [sides, setSides] = useState(0);
+  const testando = topAndLeft(arrayOfPositions(findingAngles(sides || 0)));
   return (
     <Flex justify="center" alignItems="center" w="100%" color="#08fdd8">
+      {/* <MeuBago /> */}
+      <Box color="black">
+        <input onChange={(e) => setSides(+e.target.value)} />
+      </Box>
       <Box w="100%">
         <WavyText fontSize="72px" text="Welcome" delayDuration={1} />
         <WavyText fontSize="72px" text="I'm Yago" delayDuration={1.8} />
@@ -69,7 +99,7 @@ const Hero = () => {
           delayDuration={2.6}
         />
       </Box>
-      <Flex w="100%" justify="center" alignItems="center">
+      <Flex fontSize="24px" w="100%" justify="center" alignItems="center">
         <Box
           as={motion.div}
           key={Math.random()}
@@ -81,11 +111,37 @@ const Hero = () => {
               repeat: Infinity,
             },
           }}
-          h="240px"
-          w="240px"
+          h="340px"
+          w="340px"
+          // borderRadius="50%"
+          // border="1px"
+          // borderColor="white"
           position="relative"
         >
           <Box
+            as={motion.div}
+            variants={container}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+          >
+            {testando.map((position, index) => {
+              return (
+                <Box key={Math.random()} as={motion.div} variants={fading}>
+                  <SpinningIcon
+                    config={{
+                      top: `calc(${position.top}% - 25px)`,
+                      left: `calc(${position.left}% - 25px)`,
+                    }}
+                    key={index}
+                  >
+                    {index}{" "}
+                  </SpinningIcon>
+                </Box>
+              );
+            })}
+          </Box>
+          {/* <Box
             as={motion.div}
             variants={container}
             initial="hidden"
@@ -120,7 +176,7 @@ const Hero = () => {
               <SpinningIcon
                 config={{ bottom: "calc(0% - 25px)", left: "calc(50% - 25px)" }}
               >
-                <FaHtml5 />
+                <TbBrandNextjs />
               </SpinningIcon>
             </Box>
             <Box as={motion.div} variants={fading}>
@@ -140,7 +196,7 @@ const Hero = () => {
                 <SiTailwindcss />
               </SpinningIcon>
             </Box>
-          </Box>
+          </Box> */}
         </Box>
       </Flex>
     </Flex>
@@ -176,3 +232,38 @@ export default Hero;
   5
 </SpinningIcon> */
 }
+
+// const startShape = (
+//   <Box>
+//     <SpinningIcon
+//       config={{ top: "calc(0 - 25px)", right: "calc(50% - 25px)" }}
+//     />
+//     <SpinningIcon
+//       config={{ top: "calc(35% - 25px)", left: "calc(3% - 25px)" }}
+//     />
+//     <SpinningIcon
+//       config={{ top: "calc(90% - 25px)", left: "calc(21% - 25px)" }}
+//     />
+//     <SpinningIcon
+//       config={{ top: "calc(90% - 25px)", right: "calc(21% - 25px)" }}
+//     />
+//     <SpinningIcon
+//       config={{ top: "calc(35% - 25px)", right: "calc(3% - 25px)" }}
+//     />
+//     <SpinningIcon
+//       config={{ top: "calc(75% - 25px)", left: "calc(50% - 25px)" }}
+//     />
+//     <SpinningIcon
+//       config={{ top: "calc(57.72% - 25px)", right: "calc(26.3% - 25px)" }}
+//     />
+//     <SpinningIcon
+//       config={{ top: "calc(57.72% - 25px)", left: "calc(26.3% - 25px)" }}
+//     />
+//     <SpinningIcon
+//       config={{ top: "calc(29.8% - 25px)", right: "calc(35.4% - 25px)" }}
+//     />
+//     <SpinningIcon
+//       config={{ top: "calc(29.8% - 25px)", left: "calc(35.4% - 25px)" }}
+//     />
+//   </Box>
+// );
