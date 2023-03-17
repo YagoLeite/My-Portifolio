@@ -21,6 +21,7 @@ const SingleLetter = ({ letter, size }) => {
       as={motion.div}
       color="#4169E1"
       cursor="none"
+      // fontFamily="open-sans"
       fontSize={size}
       animate={controls}
       onHoverStart={() => {

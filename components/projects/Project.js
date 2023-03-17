@@ -18,7 +18,7 @@ const Project = ({ project, index, testando, controls }) => {
       onClick={() => router.push(project.title)}
     >
       <Flex overflow="hidden">
-        <Image objectFit="cover" src={project.img} />
+        {/* <Image objectFit="cover" src={project.img} /> */}
       </Flex>
       <Box>
         <Text>Title: {project.title}</Text>
