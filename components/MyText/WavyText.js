@@ -1,9 +1,9 @@
 import React from "react";
 import { Flex, Text } from "@chakra-ui/react";
-import { motion, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
+import SingleLetter from "./SingleLetter";
 
 const WavyText = ({ text, delayDuration, fontSize }) => {
-  const controls = useAnimation();
   const container = {
     hidden: {
       opacity: 0,
@@ -35,13 +35,6 @@ const WavyText = ({ text, delayDuration, fontSize }) => {
     },
   };
 
-  const bump = {
-    visible: {
-      y: ["0px", "-8px", "4px", "0px"],
-      scale: [1, 1.2, 1.1, 1],
-      transition: { duration: 0.4, type: "spring" },
-    },
-  };
   return (
     <Flex
       variants={container}
@@ -57,27 +50,7 @@ const WavyText = ({ text, delayDuration, fontSize }) => {
             {letter === " " ? (
               <Text opacity={0}>aa</Text>
             ) : (
-              <Text
-                as={motion.div}
-                fontSize={fontSize}
-                key={Math.random()}
-                whileHover={{
-                  y: ["0px", "-8px", "4px", "0px"],
-                  scale: [1, 1.2, 1.1, 1],
-                  transition: { duration: 0.4, type: "spring" },
-                }}
-                // variants={bump}
-                // animate={controls}
-                // onHoverStart={() => {
-                //   controls.start({
-                //     y: ["0px", "-8px", "4px", "0px"],
-                //     scale: [1, 1.2, 1.1, 1],
-                //     transition: { duration: 0.4, type: "spring" },
-                //   });
-                // }}
-              >
-                {letter}
-              </Text>
+              <SingleLetter letter={letter} size={fontSize} />
             )}
           </Flex>
         );

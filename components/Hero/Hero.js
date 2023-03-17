@@ -1,12 +1,12 @@
 import { Flex, Text, Box } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import React, { useState } from "react";
-import WavyText from "./WavyText";
 import { FaReact } from "react-icons/fa";
 import { SiJavascript, SiChakraui, SiTailwindcss } from "react-icons/si";
 import { TbBrandNextjs } from "react-icons/tb";
 import { FiFramer } from "react-icons/fi";
 import MeuBago from "./MeuBago";
+import WavyText from "../MyText/WavyText";
 const SpinningIcon = (props) => {
   return (
     <Flex

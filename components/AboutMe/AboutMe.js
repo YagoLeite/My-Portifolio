@@ -1,6 +1,6 @@
 import { Box, Flex, Text } from "@chakra-ui/react";
 import React from "react";
-import WavyText from "../Hero/WavyText";
+import WavyText from "../MyText/WavyText";
 
 const AboutMe = () => {
   return (
