@@ -3,7 +3,7 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <Flex w="100%" direction="column">
+    <Flex w="100%" h="100vh" justify="center" direction="column">
       <Text fontSize="16px" color="#64ffda">{`Welcome, I'm`}</Text>
       <Text fontSize="80px" color="#ccd6f6">
         Yago Leite

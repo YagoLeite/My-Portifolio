@@ -26,7 +26,7 @@ export default function Home() {
         justify="center"
         align="center"
       >
-        <Header />
+        {/* <Header /> */}
         <Hero />
         <AboutMe />
         <Work />
