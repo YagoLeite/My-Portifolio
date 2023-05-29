@@ -36,8 +36,10 @@ const BritCard = ({ data }) => {
           <Flex justify="space-between" align="center">
             <AiOutlineFolder color="#64ffda" size={30} />
             <Flex as={motion.div} whileHover={{ color: "#64ffda" }}>
-              <Link href={data.github}>
-                <FiGithub />
+              <Link href={data.github} legacyBehavior passHref>
+                <a target={data.github}>
+                  <FiGithub />
+                </a>
               </Link>
             </Flex>
           </Flex>
