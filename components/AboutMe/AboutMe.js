@@ -40,7 +40,13 @@ const AboutMe = () => {
           })}
         </Flex>
       </Flex>
-      <Flex h="100%" w="80%" justify="center" align="center">
+      <Flex
+        h="100%"
+        w="80%"
+        justify="center"
+        align="center"
+        display={["none", "none", "flex", "flex"]}
+      >
         <Image src="/YagoLeite.JPG" alt="profilepic" borderRadius="10px" />
       </Flex>
     </Flex>

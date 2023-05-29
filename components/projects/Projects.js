@@ -34,7 +34,7 @@ const Projects = () => {
         >
           {secondProjects.map((project, index) => {
             return (
-              <Flex key={index} as={motion.div} whileHover={{ y: -10 }}>
+              <Flex key={index} as={motion.div} whileHover={{ y: -8 }}>
                 <BritCard data={project} />
               </Flex>
             );

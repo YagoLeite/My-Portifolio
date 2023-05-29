@@ -11,7 +11,7 @@ const Hero = () => {
       <Text fontSize="80px" color="#8892b0">
         Frontend Developer
       </Text>
-      <Text w="40%">
+      <Text w="50%">
         {`I'm a mathematician and frontend developer specialized in building. Currently, I've been creating awesome products at `}{" "}
         <Text as="span" color="#64ffda">
           Younner
