@@ -22,10 +22,11 @@ const BritCard = ({ data }) => {
       <a target={data.live}>
         <Flex
           direction="column"
+          justify="space-between"
           as={motion.div}
           gap="20px"
           w="100%"
-          minH="250px"
+          minH="280px"
           bg="#112240"
           p="20px"
           borderRadius="5px"

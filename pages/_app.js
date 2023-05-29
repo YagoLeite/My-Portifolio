@@ -13,7 +13,7 @@ import theme from "../theme/theme";
 function MyApp({ Component, pageProps }) {
   return (
     <ChakraProvider theme={theme}>
-      <AnimCursor />
+      {/* <AnimCursor /> */}
       <Component {...pageProps} />
     </ChakraProvider>
   );
