@@ -55,7 +55,7 @@ const ProjectDescription = (props) => {
               justify="center"
               overflow="hidden"
             >
-              <Image objectFit="cover" src={props.img} />
+              <Image objectFit="cover" src={props.img} alt="test" />
             </Flex>
           ) : (
             <Flex
@@ -71,7 +71,7 @@ const ProjectDescription = (props) => {
               justify="center"
               overflow="hidden"
             >
-              <Image objectFit="cover" src={props.imgOne} />
+              <Image objectFit="cover" src={props.imgOne} alt="test" />
             </Flex>
           )}
         </AnimatePresence>

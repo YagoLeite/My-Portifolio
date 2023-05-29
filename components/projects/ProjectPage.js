@@ -78,7 +78,7 @@ const ProjectPage = () => {
                   exit="exit"
                   overflow="hidden"
                 >
-                  <Image objectFit="cover" src={project.imgOne} />
+                  <Image objectFit="cover" src={project.imgOne} alt="test" />
                 </Flex>
               ) : (
                 <Flex
@@ -90,7 +90,7 @@ const ProjectPage = () => {
                   exit="exit"
                   overflow="hidden"
                 >
-                  <Image objectFit="cover" src={project.img} />
+                  <Image objectFit="cover" src={project.img} alt="test" />
                 </Flex>
               )}
             </Flex>

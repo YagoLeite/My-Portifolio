@@ -74,7 +74,7 @@ const _ProjectPage = () => {
                   justify="center"
                   overflow="hidden"
                 >
-                  <Image objectFit="cover" src={project.img} />
+                  <Image objectFit="cover" src={project.img} alt="test" />
                 </Flex>
               ) : (
                 <Flex
@@ -90,7 +90,7 @@ const _ProjectPage = () => {
                   justify="center"
                   overflow="hidden"
                 >
-                  <Image objectFit="cover" src={project.imgOne} />
+                  <Image objectFit="cover" src={project.imgOne} alt="tet" />
                 </Flex>
               )}
             </AnimatePresence>
