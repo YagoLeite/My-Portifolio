@@ -1,4 +1,4 @@
-import { Box, Flex } from "@chakra-ui/react";
+import { Box, Flex, Grid } from "@chakra-ui/react";
 import AboutMe from "../components/AboutMe/AboutMe";
 import Header from "../components/Header/Header";
 import Hero from "../components/Hero/Hero";
@@ -10,23 +10,25 @@ export default function Home() {
     <Flex
       direction="column"
       w="100%"
+      p="20px"
       overflowX="hidden"
       align="center"
-      color="white"
-      h="20000px"
-      bg="#1e2029"
+      // color="white"
+      bg="#0a192f"
+      color="#8892b0"
     >
       <Flex
         direction="column"
-        fontFamily="Roboto"
-        p="20px"
-        maxW="1440px"
+        fontFamily="Inter"
+        // p="20px"
+        maxW="900px"
+        gap="80px"
         justify="center"
         align="center"
       >
         <Header />
-        {/* <Hero /> */}
-        {/* <AboutMe /> */}
+        <Hero />
+        <AboutMe />
         <Work />
         <Projects />
       </Flex>

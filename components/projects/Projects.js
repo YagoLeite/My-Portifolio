@@ -28,7 +28,7 @@ const Projects = () => {
           return <ProjectCard project={project} key={index} />;
         })} */}
         <Grid
-          templateColumns="repeat(auto-fill, minmax(350px, 1fr))"
+          templateColumns="repeat(auto-fill, minmax(300px, 1fr))"
           gap="20px"
           w="100%"
         >

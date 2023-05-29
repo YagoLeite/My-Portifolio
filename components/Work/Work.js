@@ -37,9 +37,15 @@ const Work = () => {
   };
 
   return (
-    <Flex direction="column" w="100%" maxW="800px" gap="15px">
+    <Flex
+      direction="column"
+      w="100%"
+      // maxW="800px"
+      gap="15px"
+      fontFamily="Inter"
+    >
       <Text>{`Where I've worked`}</Text>
-      <Flex w="100%" gap="20px">
+      <Flex w="100%" gap="20px" direction={["column", "column", "row", "row"]}>
         <AnimateSharedLayout>
           <Flex direction="column" w="100%" maxW="fit-content">
             {data.map((work, index) => (
@@ -57,6 +63,8 @@ const Work = () => {
           <AnimatePresence exitBeforeEnter>
             <motion.div
               key={selectedWork.name}
+              // display="flex"
+              style={{ minHeight: "300px" }}
               initial="hidden"
               animate="visible"
               exit="hidden"
@@ -64,21 +72,23 @@ const Work = () => {
               transition={{ duration: 0.3 }}
             >
               <Flex direction="column" gap="5px">
-                <Text fontSize="20px" fontWeight="semibold">
-                  {selectedWork.title + ""}
+                <Text fontSize="20px" fontWeight="semibold" color="#CCD6F6">
+                  {selectedWork.title}{" "}
                   <Text as="span" color="#64ffda">
-                    @{selectedWork.name}
+                    @ {selectedWork.name}
                   </Text>
                 </Text>
                 <Text fontSize="13px">{selectedWork.date}</Text>
               </Flex>
-              {selectedWork.items?.map((item, index) => {
-                return (
-                  <Flex key={index}>
-                    <Text fontSize="15px"> - {item}</Text>
-                  </Flex>
-                );
-              })}
+              <Flex direction="column" gap="10px" mt="10px">
+                {selectedWork.items?.map((item, index) => {
+                  return (
+                    <Flex key={index}>
+                      <Text fontSize="15px"> - {item}</Text>
+                    </Flex>
+                  );
+                })}
+              </Flex>
             </motion.div>
           </AnimatePresence>
         </Flex>
@@ -103,7 +113,7 @@ function SidebarItem({ work, isSelected, onClick }) {
         style={{
           height: "100%",
           width: "2px",
-          backgroundColor: "white",
+          backgroundColor: "#8892b0",
           position: "absolute",
           left: 0,
         }}
@@ -123,7 +133,7 @@ function SidebarItem({ work, isSelected, onClick }) {
           }}
         />
       )}
-      <Text color={isSelected ? "#64ffda" : "white"}>{work.name}</Text>
+      <Text color={isSelected ? "#64ffda" : "#8892b0"}>{work.name}</Text>
     </Flex>
   );
 }

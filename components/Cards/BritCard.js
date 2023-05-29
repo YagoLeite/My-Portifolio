@@ -7,7 +7,7 @@ import { FiGithub } from "react-icons/fi";
 
 const textVariant = {
   initial: {
-    color: "white",
+    color: "#CCD6F6",
   },
   hovered: {
     color: "#64ffda",
@@ -25,8 +25,8 @@ const BritCard = ({ data }) => {
           as={motion.div}
           gap="20px"
           w="100%"
+          minH="250px"
           bg="#112240"
-          color="white"
           p="20px"
           borderRadius="5px"
           cursor="pointer"

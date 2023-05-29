@@ -11,22 +11,20 @@ const Spline = dynamic(() => import("@splinetool/react-spline"), {
 
 const Hero = () => {
   return (
-    <Flex
-      w="100%"
-      direction={["column", "column", "row", "row"]}
-      justify="space-between"
-    >
-      <Flex direction="column">
-        <WavyText text="Welcome" delayDuration={0} fontSize="45px" />
-        <WavyText text="My name is Yago" delayDuration={1} fontSize="45px" />
-        <Text>
-          I like to craft solid and scalable frontend products with great user
-          experiences.
+    <Flex w="100%" direction="column">
+      <Text fontSize="16px" color="#64ffda">{`Welcome, I'm`}</Text>
+      <Text fontSize="80px" color="#ccd6f6">
+        Yago Leite
+      </Text>
+      <Text fontSize="80px" color="#8892b0">
+        Frontend Developer
+      </Text>
+      <Text w="40%">
+        {`I'm a mathematician and frontend developer specialized in building. Currently, I've been creating awesome products at `}{" "}
+        <Text as="span" color="#64ffda">
+          Younner
         </Text>
-      </Flex>
-      <Flex h="400px" w="400px">
-        <Spline scene="https://prod.spline.design/4ZJlx29YrTF5V2X3/scene.splinecode" />
-      </Flex>
+      </Text>
     </Flex>
   );
 };
