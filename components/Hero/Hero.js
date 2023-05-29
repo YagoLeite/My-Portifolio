@@ -1,13 +1,5 @@
 import { Flex, Text } from "@chakra-ui/react";
-import dynamic from "next/dynamic";
-// import Spline from "@splinetool/react-spline";
 import React from "react";
-import WavyText from "../MyText/WavyText";
-
-const Spline = dynamic(() => import("@splinetool/react-spline"), {
-  ssr: false,
-  loading: () => <p>Loading...</p>,
-});
 
 const Hero = () => {
   return (
