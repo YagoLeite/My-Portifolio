@@ -13,7 +13,14 @@ const stacks = [
 
 const AboutMe = () => {
   return (
-    <Flex w="100%" px="40px" gap="20px">
+    <Flex
+      w="100%"
+      px="40px"
+      gap="20px"
+      h="100vh"
+      align="center"
+      justify="center"
+    >
       <Flex direction="column" gap="25px" fontSize="15px">
         <Text>
           {`Hey there! I'm Yago Leite, a mathematician who loves building things for the web. A couple of years ago, I took the plunge into frontend development, discovering how my math background could add an interesting spin to the way I approach code.`}

@@ -7,6 +7,8 @@ import Work from "../components/Work/Work";
 import { motion } from "framer-motion";
 import { FiGithub, FiLinkedin, FiInstagram } from "react-icons/fi";
 import Link from "next/link";
+import Contact from "../components/Contact/Contact";
+import Footer from "../components/Footer/Footer";
 
 const iconsData = [
   { icon: <FiGithub />, link: "https://github.com/YagoLeite" },
@@ -17,13 +19,16 @@ const iconsData = [
 export default function Home() {
   return (
     <Flex
-      bg="#0a192f"
+      // bg="#0a192f"
+      bg="black"
       color="#8892b0"
       position="relative"
       justifyContent="space-around"
       w="100%"
+      px="20px"
     >
       <Flex
+        display={["none", "none", "flex", "flex"]}
         height="300px"
         position="sticky"
         top="0"
@@ -69,8 +74,11 @@ export default function Home() {
         <AboutMe />
         <Work />
         <Projects />
+        <Contact />
+        <Footer />
       </Flex>
       <Flex
+        display={["none", "none", "flex", "flex"]}
         height="300px"
         position="sticky"
         top="0"

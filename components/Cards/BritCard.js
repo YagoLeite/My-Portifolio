@@ -25,9 +25,10 @@ const BritCard = ({ data }) => {
           justify="space-between"
           as={motion.div}
           gap="20px"
-          w="100%"
+          // w="100%"
           minH="280px"
-          bg="#112240"
+          // bg="#112240"
+          bg="#050d12"
           p="20px"
           borderRadius="5px"
           cursor="pointer"

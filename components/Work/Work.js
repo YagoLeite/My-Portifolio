@@ -41,8 +41,11 @@ const Work = () => {
       direction="column"
       w="100%"
       // maxW="800px"
-      gap="25px"
+      gap="50px"
       fontFamily="Inter"
+      h="100vh"
+      align="center"
+      justify="center"
     >
       <Flex w="100%" gap="20px" align="center">
         <Text color="#CCD6F6" fontSize="32px">{`Where I've worked`}</Text>
