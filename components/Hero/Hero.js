@@ -49,7 +49,7 @@ const getVariant = (direction) => ({
 
 const Hero = () => {
   // const [[page, direction], setPage] = useState([0, 0]);
-  const titles = ["Frontend Developer", "Software Developer"];
+  const titles = ["Frontend Developer", "Software Engineer"];
   const [direction, setDirection] = useState("right");
   const [counter, setCounter] = useState(0);
 
