@@ -95,7 +95,9 @@ const Work = () => {
                 {selectedWork.items?.map((item, index) => {
                   return (
                     <Flex key={index} align="center" gap="5px">
-                      <MdArrowRight color="#64ffda" />
+                      <Flex w="15px" h="15px" justify="center" align="center">
+                        <MdArrowRight color="#64ffda" />
+                      </Flex>
                       <Text fontSize="15px">{item}</Text>
                     </Flex>
                   );
