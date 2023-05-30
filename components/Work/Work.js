@@ -1,8 +1,8 @@
-import { Flex, Text } from "@chakra-ui/react";
+import { Divider, Flex, Text } from "@chakra-ui/react";
 import { AnimatePresence, AnimateSharedLayout } from "framer-motion";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-
+import { MdArrowRight } from "react-icons/md";
 const data = [
   {
     name: "Younner",
@@ -41,10 +41,18 @@ const Work = () => {
       direction="column"
       w="100%"
       // maxW="800px"
-      gap="15px"
+      gap="25px"
       fontFamily="Inter"
     >
-      <Text>{`Where I've worked`}</Text>
+      <Flex w="100%" gap="20px" align="center">
+        <Text color="#CCD6F6" fontSize="32px">{`Where I've worked`}</Text>
+        <Divider
+          orientation="horizontal"
+          borderColor="#ccd6f6"
+          w="40%"
+          opacity={0.2}
+        />
+      </Flex>
       <Flex w="100%" gap="20px" direction={["column", "column", "row", "row"]}>
         <AnimateSharedLayout>
           <Flex direction="column" w="100%" maxW="fit-content">
@@ -83,8 +91,9 @@ const Work = () => {
               <Flex direction="column" gap="10px" mt="10px">
                 {selectedWork.items?.map((item, index) => {
                   return (
-                    <Flex key={index}>
-                      <Text fontSize="15px"> - {item}</Text>
+                    <Flex key={index} align="center" gap="5px">
+                      <MdArrowRight color="#64ffda" />
+                      <Text fontSize="15px">{item}</Text>
                     </Flex>
                   );
                 })}

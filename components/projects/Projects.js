@@ -1,6 +1,6 @@
 import React from "react";
 import Project from "./Project";
-import { Flex, Grid } from "@chakra-ui/react";
+import { Divider, Flex, Grid, Text } from "@chakra-ui/react";
 import { projects, secondProjects } from "../../constans/Constants";
 import ProjectCard from "../Cards/ProjectCard";
 import WavyText from "../MyText/WavyText";
@@ -16,11 +16,13 @@ const Projects = () => {
       align="center"
       gap="30px"
     >
-      <Flex w="100%" justify="left" align="center">
-        <WavyText
-          text={`Things I've built!`}
-          delayDuration={0}
-          fontSize="45px"
+      <Flex w="100%" gap="20px" justify="left" align="center">
+        <Text color="#CCD6F6" fontSize="32px">{`Things I've Built`}</Text>
+        <Divider
+          orientation="horizontal"
+          borderColor="#ccd6f6"
+          w="40%"
+          opacity={0.2}
         />
       </Flex>
       <Flex w="100%" gap="80px" justify="center" align="center" wrap="wrap">
