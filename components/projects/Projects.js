@@ -14,7 +14,7 @@ const Projects = () => {
       direction="column"
       justifyContent="center"
       align="center"
-      gap="30px"
+      gap="35px"
     >
       <Flex w="100%" gap="20px" justify="left" align="center">
         <Text color="#CCD6F6" fontSize="32px">{`Things I've Built`}</Text>

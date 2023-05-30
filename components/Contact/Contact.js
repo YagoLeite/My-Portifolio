@@ -20,7 +20,11 @@ const Contact = () => {
           opacity={0.2}
         />
         <Flex minW={["200px", "400px", "400px", "400px"]} justify="center">
-          <Text fontSize={["25px", "40px", "50px", "50px"]} w="fit-content">
+          <Text
+            color="#ccd6f6"
+            fontSize={["25px", "40px", "50px", "50px"]}
+            w="fit-content"
+          >
             Get In Touch
           </Text>
         </Flex>
@@ -37,7 +41,9 @@ const Contact = () => {
         textAlign="center"
         w="fit-content"
       >{`Interested in learning more about my work or have a project idea that you'd like to discuss? I invite you to reach out with a friendly 'Hello!' – I'm always open to new collaborations and conversations!`}</Text>
-      <ContactButton message="Contact me" />
+      <Flex mt="25px">
+        <ContactButton message="Contact me" />
+      </Flex>
     </Flex>
   );
 };

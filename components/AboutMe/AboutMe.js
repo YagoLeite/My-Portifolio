@@ -30,7 +30,7 @@ const AboutMe = () => {
           opacity={0.2}
         />
       </Flex>
-      <Flex w="100%" gap="20px">
+      <Flex w="100%" gap="20px" textAlign="justify">
         <Flex direction="column" gap="25px" fontSize="15px">
           <Text>
             {`Hey there! I'm Yago Leite, a mathematician who loves building things for the web. A couple of years ago, I took the plunge into frontend development, discovering how my math background could add an interesting spin to the way I approach code.`}
