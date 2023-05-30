@@ -42,8 +42,8 @@ const Work = () => {
       w="100%"
       // maxW="800px"
       gap="50px"
+      minH="600px"
       fontFamily="Inter"
-      h="100vh"
       align="center"
       justify="center"
     >

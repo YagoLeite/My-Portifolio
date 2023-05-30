@@ -10,7 +10,6 @@ const Contact = () => {
       align="center"
       justify="center"
       gap="20px"
-      h="80vh"
     >
       <Flex w="100%" gap="10px" justifyContent="space-between" align="center">
         <Divider
