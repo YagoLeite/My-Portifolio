@@ -38,6 +38,16 @@ const Work = () => {
 
   return (
     <Flex
+      as={motion.div}
+      initial={{ opacity: 0 }}
+      whileInView={{
+        opacity: 1,
+        type: "ease",
+        transition: {
+          delay: 0.2,
+          duration: 0.5,
+        },
+      }}
       direction="column"
       w="100%"
       // maxW="800px"

@@ -1,10 +1,21 @@
 import { Divider, Flex, Text } from "@chakra-ui/react";
 import React from "react";
 import ContactButton from "./ContactButton";
+import { motion } from "framer-motion";
 
 const Contact = () => {
   return (
     <Flex
+      as={motion.div}
+      initial={{ opacity: 0 }}
+      whileInView={{
+        opacity: 1,
+        type: "ease",
+        transition: {
+          delay: 0.2,
+          duration: 0.5,
+        },
+      }}
       w="100%"
       direction="column"
       align="center"

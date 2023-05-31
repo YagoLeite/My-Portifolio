@@ -57,9 +57,16 @@ const BritCard = ({ data }) => {
             </Text>
             <Text fontSize="15px">{data.description}</Text>
           </Flex>
-          <Flex gap="5px">
+          <Flex gap="10px">
             {data.stacks?.map((text, index) => (
-              <Text fontSize="11px" key={index}>
+              <Text
+                fontSize="11px"
+                fontFamily="Lekton"
+                fontWeight="900"
+                letterSpacing="2px"
+                key={index}
+                color="#64ffda"
+              >
                 {text}
               </Text>
             ))}
