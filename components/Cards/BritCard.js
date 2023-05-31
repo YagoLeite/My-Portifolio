@@ -63,7 +63,7 @@ const BritCard = ({ data }) => {
                 fontSize="11px"
                 fontFamily="Lekton"
                 fontWeight="900"
-                letterSpacing="2px"
+                letterSpacing={["1px", "2px", "2px", "2px"]}
                 key={index}
                 color="#64ffda"
               >
