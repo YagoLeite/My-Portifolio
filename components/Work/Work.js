@@ -9,10 +9,10 @@ const data = [
     title: "Frontend Dev",
     date: "2022 - Present",
     items: [
-      `Work as a productive and positive team member to design, code, report and debug operations`,
-      "Helped to achieve a consistent look and visual theme across the website by promoting uniform fonts, formatting, images and layout.",
+      `Implemented responsive web designs, ensuring optimal performance across multiple device types.`,
+      "Implemented a successful API integration project which synchronized data across different services, enhancing overall system efficiency and reducing data redundancy.",
       "Collaborate with designers, project managers, and other engineers to transform creative concepts into production realities for clients and stakeholders",
-      "Successfully identified, diagnosed, and fixed website issues",
+      "Developed reusable components and front-end libraries for future use, increasing development speed and efficiency.",
     ],
   },
   {

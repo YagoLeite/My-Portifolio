@@ -86,7 +86,12 @@ const Hero = () => {
       <Text fontSize={["45px", "55px", "70px", "80px"]} color="#ccd6f6">
         Yago Leite
       </Text>
-      <Flex w="100%" overflow="hidden" minH="100px" position="relative">
+      <Flex
+        w="100%"
+        overflow="hidden"
+        minH={["60px", "60px", "100px", "100px"]}
+        position="relative"
+      >
         <AnimatePresence initial={false}>
           <Flex
             as={motion.div}
@@ -101,7 +106,7 @@ const Hero = () => {
             left="0"
           >
             <Text
-              fontSize={["35px", "35px", "70px", "80px"]}
+              fontSize={["31px", "35px", "70px", "80px"]}
               mt={["0", "0", "-20px", "-20px"]}
               color="#8892b0"
               w="100%"
@@ -111,7 +116,10 @@ const Hero = () => {
           </Flex>
         </AnimatePresence>
       </Flex>
-      <Text w={["100%", "100%", "50%", "50%"]}>
+      <Text
+        w={["100%", "100%", "50%", "50%"]}
+        fontSize={["13px", "14px", "15px", "16px"]}
+      >
         {`I'm a mathematician and frontend developer specialized in building. Currently, I've been creating awesome products at `}{" "}
         <Text as="span" color="#64ffda">
           Younner

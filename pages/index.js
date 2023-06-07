@@ -47,8 +47,9 @@ export default function Home() {
                     as={motion.div}
                     cursor="pointer"
                     whileHover={{
-                      y: 4,
+                      y: -4,
                       color: "#64ffda",
+                      scale: 1.1,
                       transition: { duration: 0.2 },
                     }}
                   >

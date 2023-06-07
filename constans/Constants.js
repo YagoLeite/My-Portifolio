@@ -82,7 +82,7 @@ export const secondProjects = [
     title: "Golden Stars",
     live: "https://golden-ratio-stars.vercel.app",
     github: "https://github.com/YagoLeite/World-Cup-Simulator",
-    stacks: ["React Three Fiber"],
+    stacks: ["React Three Fiber", "Mathematics"],
     description: `The arrangement of seeds in the head of a sunflower can be mathematicly modeled. I used React Three Fiber to a third dimention to it along with some other actions. You're welcome to play with these stars. `,
   },
   {
@@ -103,7 +103,7 @@ export const secondProjects = [
     title: "Crypto Tracker",
     live: "https://crypto-tracker-3e62e.web.app",
     github: "https://github.com/YagoLeite/World-Cup-Simulator",
-    image: crypto,
+    stacks: ["React", "Firebase"],
     description: `Crypto Tracker is an app for you to keep an eye on your favourite crypto currency. In this project I handled login and pagination for the first time. I used Firebase for it. Have a look and create an account too. `,
   },
   {
