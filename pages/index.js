@@ -109,7 +109,7 @@ export default function Home() {
           <Hero />
           <AboutMe />
           <Work />
-          <Flex direction="column" gap="25px" w="100%">
+          <Flex direction="column" gap="50px" w="100%">
             <Flex w="100%" gap="20px" align="center">
               <Text color="#CCD6F6" fontSize="32px">{`My TOP projects`}</Text>
               <Divider
