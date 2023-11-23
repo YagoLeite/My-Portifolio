@@ -1,7 +1,12 @@
 import { Box, Divider, Flex, Image, Text } from "@chakra-ui/react";
-import React from "react";
+import React, { useRef } from "react";
 import WavyText from "../MyText/WavyText";
-import { AnimatePresence, motion } from "framer-motion";
+import {
+  AnimatePresence,
+  motion,
+  useScroll,
+  useTransform,
+} from "framer-motion";
 import { MdArrowRight } from "react-icons/md";
 
 const stacks = [
@@ -14,19 +19,19 @@ const stacks = [
 ];
 
 const AboutMe = () => {
+  const ref = useRef();
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["0 1", "1.33 1"],
+  });
+  const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
+  const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
   return (
     <AnimatePresence>
       <Flex
         as={motion.div}
-        initial={{ opacity: 0 }}
-        whileInView={{
-          opacity: 1,
-          type: "ease",
-          transition: {
-            delay: 0.2,
-            duration: 0.5,
-          },
-        }}
+        ref={ref}
+        style={{ scale: scaleProgress, opacity: opacityProgress }}
         w="100%"
         gap="20px"
         direction="column"

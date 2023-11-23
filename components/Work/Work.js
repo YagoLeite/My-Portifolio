@@ -1,6 +1,11 @@
 import { Divider, Flex, Text } from "@chakra-ui/react";
-import { AnimatePresence, AnimateSharedLayout } from "framer-motion";
-import React, { useState } from "react";
+import {
+  AnimatePresence,
+  AnimateSharedLayout,
+  useScroll,
+  useTransform,
+} from "framer-motion";
+import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { MdArrowRight } from "react-icons/md";
 const data = [
@@ -30,6 +35,13 @@ const data = [
 
 const Work = () => {
   const [selectedWork, setSelectedWork] = useState(data[0]);
+  const ref = useRef();
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["0 1", "1.33 1"],
+  });
+  const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
+  const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
 
   const variants = {
     hidden: { opacity: 0 },
@@ -39,15 +51,8 @@ const Work = () => {
   return (
     <Flex
       as={motion.div}
-      initial={{ opacity: 0 }}
-      whileInView={{
-        opacity: 1,
-        type: "ease",
-        transition: {
-          delay: 0.2,
-          duration: 0.5,
-        },
-      }}
+      ref={ref}
+      style={{ scale: scaleProgress, opacity: opacityProgress }}
       direction="column"
       w="100%"
       // maxW="800px"

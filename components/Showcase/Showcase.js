@@ -1,7 +1,7 @@
 import { Flex, Image, Text } from "@chakra-ui/react";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 
 const overlayVariantsTwo = {
   idle: { left: "100%", transition: { duration: 0.4 } },
@@ -35,94 +35,110 @@ const textVariantsTwo = {
 
 const Showcase = ({ data }) => {
   const [isHovering, setIsHovering] = useState(false);
+  const ref = useRef();
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["0 1", "1.33 1"],
+  });
+  const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
+  const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
+
   return (
     <Link href={data.link} legacyBehavior passHref>
       <a target={data.link}>
         <Flex
           as={motion.div}
-          onMouseEnter={() => setIsHovering(true)}
-          onMouseLeave={() => setIsHovering(false)}
-          position="relative"
-          direction="column"
-          //   bg="green"
-          //   w={["300px", "400px", "500px", "800px"]}
-          w="100%"
-          h="400px"
-          jusitfy="center"
-          align="center"
-          overflow="hidden"
-          cursor="pointer"
-          color="white"
+          ref={ref}
+          style={{ scale: scaleProgress, opacity: opacityProgress }}
+          w="fit-content"
+          h="fit-content"
         >
-          <Image
-            // src="/animationStoreImage.png"
-            src={data.image}
-            srcSet={data.image}
-            alt="project image"
-            sizes="(max-width: 320px) 280px, 
+          <Flex
+            as={motion.div}
+            onMouseEnter={() => setIsHovering(true)}
+            onMouseLeave={() => setIsHovering(false)}
+            position="relative"
+            direction="column"
+            //   bg="green"
+            //   w={["300px", "400px", "500px", "800px"]}
+            w="100%"
+            h="400px"
+            jusitfy="center"
+            align="center"
+            overflow="hidden"
+            cursor="pointer"
+            color="white"
+          >
+            <Image
+              // src="/animationStoreImage.png"
+              src={data.image}
+              srcSet={data.image}
+              alt="project image"
+              sizes="(max-width: 320px) 280px, 
              (max-width: 480px) 440px, 
              800px"
-            as={motion.img}
-            variants={imgVariants}
-            initial="idle"
-            animate={isHovering ? "hovered" : "idle"}
-            position="aboslute"
-            // top="0"
-            objectFit="fill"
-            // w={["300px", "400px", "500px", "700px"]}
-            h="400px"
-          />
-          <Flex
-            as={motion.div}
-            variants={overlayVariantsTwo}
-            initial="idle"
-            animate={isHovering ? "hovered" : "idle"}
-            position="absolute"
-            top="50%"
-            // w={["300px", "400px", "500px", "700px"]}
-            w="100%"
-            h="200px"
-            background="rgba(0, 0, 0, 0.5)"
-            direction="column"
-            p="10px"
-            gap="10px"
-          >
-            <Flex w="100%" px="10px">
-              <Text
-                as={motion.div}
-                variants={textVariants}
-                initial="idle"
-                animate={isHovering ? "hovered" : "idle"}
-                fontSize={["13px", "14px", "16px"]}
-                textAlign="center"
-              >
-                {data.description}
-              </Text>
+              as={motion.img}
+              variants={imgVariants}
+              initial="idle"
+              animate={isHovering ? "hovered" : "idle"}
+              position="aboslute"
+              // top="0"
+              objectFit="fill"
+              // w={["300px", "400px", "500px", "700px"]}
+              h="400px"
+            />
+            <Flex
+              as={motion.div}
+              variants={overlayVariantsTwo}
+              initial="idle"
+              animate={isHovering ? "hovered" : "idle"}
+              position="absolute"
+              top="50%"
+              // w={["300px", "400px", "500px", "700px"]}
+              w="100%"
+              h="200px"
+              background="rgba(0, 0, 0, 0.5)"
+              direction="column"
+              p="10px"
+              gap="10px"
+            >
+              <Flex w="100%" px="10px">
+                <Text
+                  as={motion.div}
+                  variants={textVariants}
+                  initial="idle"
+                  animate={isHovering ? "hovered" : "idle"}
+                  fontSize={["13px", "14px", "16px"]}
+                  textAlign="center"
+                >
+                  {data.description}
+                </Text>
+              </Flex>
             </Flex>
-          </Flex>
-          <Flex
-            as={motion.div}
-            variants={overlayVariantsOne}
-            initial="idle"
-            animate={isHovering ? "hovered" : "idle"}
-            position="absolute"
-            // top="0"
-            // w={["300px", "400px", "500px", "700px"]}
-            w="100%"
-            h="200px"
-            background="rgba(0, 0, 0, 0.5)"
-          >
-            <Flex w="100%" align="center" justify="center">
-              <Text
-                as={motion.div}
-                variants={textVariantsTwo}
-                initial="idle"
-                animate={isHovering ? "hovered" : "idle"}
-                fontSize={["55px", "60px"]}
-                fontWeight="bold"
-              >
-                {data.title}
-              </Text>
+            <Flex
+              as={motion.div}
+              variants={overlayVariantsOne}
+              initial="idle"
+              animate={isHovering ? "hovered" : "idle"}
+              position="absolute"
+              // top="0"
+              // w={["300px", "400px", "500px", "700px"]}
+              w="100%"
+              h="200px"
+              background="rgba(0, 0, 0, 0.5)"
+            >
+              <Flex w="100%" align="center" justify="center">
+                <Text
+                  as={motion.div}
+                  variants={textVariantsTwo}
+                  initial="idle"
+                  animate={isHovering ? "hovered" : "idle"}
+                  fontSize={["55px", "60px"]}
+                  fontWeight="bold"
+                >
+                  {data.title}
+                </Text>
+              </Flex>
             </Flex>
           </Flex>
         </Flex>
