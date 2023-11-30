@@ -120,7 +120,7 @@ export const workData = [
   {
     name: "Younner",
     title: "Frontend Dev",
-    date: "2022 - Present",
+    date: "Jun 2022 - Jul 2023",
     items: [
       `Implemented responsive web designs, ensuring optimal performance across multiple device types.`,
       "Implemented a successful API integration project which synchronized data across different services, enhancing overall system efficiency and reducing data redundancy.",
@@ -144,18 +144,34 @@ export const workData = [
 export const projectData = [
   {
     name: "TopGain",
-    title: "Frontend Dev",
     link: "http://www.topgain.com",
     description:
       "In my project with TopGain, a Brazilian company specializing in financial market education, I focused on enhancing user experience across their digital platforms. This involved streamlining the interface for their extensive course offerings and improving the interactivity of live market discussions and chat features. My efforts led to increased user engagement and a more intuitive learning environment, showcasing my skills in user-centered design and digital innovation in education.",
-    stacks: ["TypeScript", "NextJs", "Chakra UI", "TESTE"],
+    stacks: ["TypeScript", "NextJs", "Chakra UI", "Agora.io"],
   },
   {
     name: "Animation Store",
-    title: "Maths teacher",
     link: "http://www.animationstore.dev",
     description:
       "Animation Store is a streamlined, user-friendly hub for developers to explore and acquire animations with ease. It boasts a vast collection of animations crafted using Chakra UI, Framer Motion, and React. Users can effortlessly view the source code of any animation and integrate it into their projects with just two clicks. Additionally, this platform encourages community engagement by allowing users to share their own animations, fostering a collaborative and innovative environment.",
     stacks: ["JavaScript", "NextJs", "Chakra UI", "Framer Motion"],
+  },
+  {
+    name: "World Cup Simulator",
+    link: "https://world-cup-simulator.vercel.app",
+    stacks: ["React", "Next.js", "Chakra UI"],
+    description: `Before the World Cup started, my friends and I were trying to figure out the group matches and what could happen after it. So I built it for ourselves. You're more than welcome to try it out!  `,
+  },
+  {
+    name: "Countries API",
+    link: "https://country-codex.vercel.app",
+    stacks: ["React", "Next.js", "Chakra UI"],
+    description: `In this project I practiced how to fetch data and properly store it with Context API. Using Nextjs I'm able to get the data using the server! `,
+  },
+  {
+    name: "Golden Stars",
+    link: "https://golden-ratio-stars.vercel.app",
+    stacks: ["React Three Fiber", "Mathematics"],
+    description: `The arrangement of seeds in the head of a sunflower can be mathematicly modeled. I used React Three Fiber to a third dimention to it along with some other actions. You're welcome to play with these stars. `,
   },
 ];

@@ -23,9 +23,9 @@ const Moon = () => {
       h="200px"
       borderRadius="50%"
       left="50%"
-      transform="translateX(-50%)" // Centers the moon horizontally
+      transform="translateX(-50%, -50%)" // Centers the moon horizontally
       bg="white"
-      zIndex={1}
+      //   zIndex={-1}
       style={{ top: topPosition }}
     />
   );

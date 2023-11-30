@@ -6,6 +6,8 @@ import MyHero from "../Hero/MyHero";
 import MyWork from "../Work/MyWork";
 import MyProjects from "../projects/MyProjects";
 import useResizeObserver from "@react-hook/resize-observer";
+import TopGradient from "../Stars/TopGradiant";
+import ContactMe from "../Contact/ContactMe";
 
 const FullPage = () => {
   const ref = useRef();
@@ -16,16 +18,32 @@ const FullPage = () => {
   });
 
   return (
-    <Flex w="100%" maxW="100vw" bg="black" position="relative" h={height}>
-      <Flex position="sticky" top="0" left="0" right="0" w="100%" h="100vh">
+    <Flex
+      w="100%"
+      maxW="100vw"
+      minH="100vw"
+      bg="black"
+      position="relative"
+      h={height}
+    >
+      <Flex
+        position="sticky"
+        top="0"
+        left="0"
+        right="0"
+        w="100%"
+        h="100vh"
+        overflow="hidden"
+      >
         <Flex
           backgroundImage={`url(/backgroundImage.png)`}
           h="100vh"
           w="100%"
           backgroundSize="cover"
           backgroundPosition="bottom"
-          zIndex={3}
+          zIndex={1}
         />
+        <TopGradient />
         <Moon />
         <StarsBackground />
       </Flex>
@@ -34,7 +52,7 @@ const FullPage = () => {
         ref={ref}
         top="0"
         w="100%"
-        zIndex={4}
+        zIndex={3}
         h="fit-content"
         direction={["column", "column", "column", "row", "row"]}
       >
@@ -48,6 +66,7 @@ const FullPage = () => {
         >
           <MyWork />
           <MyProjects />
+          <ContactMe />
         </Flex>
       </Flex>
     </Flex>

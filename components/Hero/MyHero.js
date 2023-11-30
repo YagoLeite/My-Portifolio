@@ -1,5 +1,8 @@
 import { Flex, Text } from "@chakra-ui/react";
+import { motion } from "framer-motion";
+import Link from "next/link";
 import React from "react";
+import { FiGithub, FiLinkedin } from "react-icons/fi";
 
 const MyHero = () => {
   return (
@@ -19,12 +22,54 @@ const MyHero = () => {
       right={["", "", "", "0", "0"]}
       px="30px"
       pt="100px"
+      zIndex={10}
     >
       <Text fontSize="40px" fontWeight="extrabold">{`Hi, I'm Yago`}</Text>
-      <Flex w="100%">some icons</Flex>
+      <Flex w="100%" gap="30px">
+        <Flex
+          as={motion.div}
+          whileHover={{ scale: 1.1 }}
+          cursor="pointer"
+          w="40px"
+          h="40px"
+          justify="center"
+          align="center"
+          borderRadius="10px"
+          border="1px solid"
+          p="10px"
+        >
+          <Link href={"https://github.com/YagoLeite"} legacyBehavior passHref>
+            <a target={"https://github.com/YagoLeite"}>
+              <FiGithub size="100%" />
+            </a>
+          </Link>
+        </Flex>
+        <Flex
+          as={motion.div}
+          whileHover={{ scale: 1.1 }}
+          cursor="pointer"
+          w="40px"
+          h="40px"
+          justify="center"
+          align="center"
+          borderRadius="10px"
+          border="1px solid"
+          p="10px"
+        >
+          <Link
+            href={"https://www.linkedin.com/in/yagoleite/"}
+            legacyBehavior
+            passHref
+          >
+            <a target={"https://www.linkedin.com/in/yagoleite/"}>
+              <FiLinkedin size="100%" />
+            </a>
+          </Link>
+        </Flex>
+      </Flex>
       <Text
-        fontSize={["24px"]}
-      >{`I'm a software engineer based in Orlando, Florida. Here's a sentence about a cool thing that I built and the people it helps. This is about the type of person I am and what I like to do in my free time so you know I'm not a robot. Here's one last interesting sentence so that you remember me a bit better.`}</Text>
+        fontSize={["20px", "24px", "24px"]}
+      >{`I'm a frontend developer and mathematician, skilled in bringing dynamic animations to web interfaces. My focus is on efficient, engaging user experiences. In my free time, I enjoy exploring new tech and solving complex problems. Ready and eager for new challenges in the world of development.`}</Text>
     </Flex>
   );
 };
