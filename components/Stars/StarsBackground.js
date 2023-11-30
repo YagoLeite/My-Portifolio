@@ -4,7 +4,11 @@ import { motion, useScroll, useTransform } from "framer-motion";
 
 const StarsBackground = () => {
   const [stars, setStars] = useState([]);
-  const { scrollYProgress } = useScroll();
+  const { scrollYProgress } = useScroll({
+    // target: ref,
+    offset: ["start end", "end start"],
+    layoutEffect: false,
+  });
 
   const yTransforms = [
     useTransform(scrollYProgress, [0, 1], [0, 10]),

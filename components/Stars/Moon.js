@@ -9,6 +9,7 @@ const Moon = () => {
   const { scrollYProgress } = useScroll({
     // target: ref,
     offset: ["start end", "end start"],
+    layoutEffect: false,
   });
 
   // Transform the vertical position of the moon based on scroll progress
