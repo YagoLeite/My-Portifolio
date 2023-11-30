@@ -5,23 +5,24 @@ import { motion, useScroll, useTransform } from "framer-motion";
 const StarsBackground = () => {
   const [stars, setStars] = useState([]);
   const { scrollYProgress } = useScroll({
-    // target: ref,
+
     offset: ["start end", "end start"],
     layoutEffect: false,
   });
 
   const yTransforms = [
-    useTransform(scrollYProgress, [0, 1], [0, 10]),
-    useTransform(scrollYProgress, [0, 1], [0, 15]),
-    useTransform(scrollYProgress, [0, 1], [0, 20]),
+    useTransform(scrollYProgress, [0, 1], [20, 100]),
+    useTransform(scrollYProgress, [0, 1], [10, -105]),
+    useTransform(scrollYProgress, [0, 1], [0, 200]),
     useTransform(scrollYProgress, [0, 1], [0, 25]),
     useTransform(scrollYProgress, [0, 1], [0, 30]),
   ];
 
   const opacityTransforms = [
     useTransform(scrollYProgress, [0, 1], [1, 0]),
-    useTransform(scrollYProgress, [1, 0], [0.9, 0.1]),
+    useTransform(scrollYProgress, [1, 0], [1, 0.4]),
     useTransform(scrollYProgress, [0.5, 1], [0.8, 0.2]),
+    useTransform(scrollYProgress, [0, 1], [0, 1]),
   ];
 
   const generateStars = useCallback(() => {
