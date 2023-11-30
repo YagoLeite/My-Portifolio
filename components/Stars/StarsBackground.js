@@ -17,6 +17,13 @@ const StarsBackground = () => {
     useTransform(scrollYProgress, [0, 1], [0, 25]),
     useTransform(scrollYProgress, [0, 1], [0, 30]),
   ];
+  const xTransforms = [
+    useTransform(scrollYProgress, [0, 1], [0, 10]),
+    useTransform(scrollYProgress, [0, 1], [10, -15]),
+    useTransform(scrollYProgress, [0, 1], [0, 20]),
+    useTransform(scrollYProgress, [0, 1], [0, 25]),
+    useTransform(scrollYProgress, [0, 1], [0, 30]),
+  ];
 
   const opacityTransforms = [
     useTransform(scrollYProgress, [0, 1], [1, 0]),
@@ -40,6 +47,7 @@ const StarsBackground = () => {
         x: xPos,
         y: yPos,
         yTransform: yTransforms[yTransformIndex],
+        xTransform: xTransforms[yTransformIndex],
         opacityTransform: opacityTransforms[opacityTransformIndex],
       });
     }
@@ -64,6 +72,7 @@ const StarsBackground = () => {
             borderRadius: "50%",
             backgroundColor: "white",
             y: star.yTransform,
+            x: star.xTransform,
             opacity: star.opacityTransform,
           }}
         />
