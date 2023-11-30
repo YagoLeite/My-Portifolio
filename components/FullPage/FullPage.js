@@ -16,7 +16,7 @@ const FullPage = () => {
   });
 
   return (
-    <Flex w="100%" bg="black" position="relative" h={height}>
+    <Flex w="100%" maxW="100vw" bg="black" position="relative" h={height}>
       <Flex position="sticky" top="0" left="0" right="0" w="100%" h="100vh">
         <Flex
           backgroundImage={`url(/backgroundImage.png)`}
