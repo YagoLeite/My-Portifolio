@@ -8,13 +8,14 @@ import MyProjects from "../projects/MyProjects";
 import useResizeObserver from "@react-hook/resize-observer";
 import TopGradient from "../Stars/TopGradiant";
 import ContactMe from "../Contact/ContactMe";
+import Stacks from "../Stacks/Stacks";
 
 const FullPage = () => {
   const ref = useRef();
   const [height, setHeight] = useState("100vh");
 
   useResizeObserver(ref, (entry) => {
-    setHeight(entry.contentRect.height);
+    setHeight(entry.contentRect.height + 50);
   });
 
   return (
@@ -68,6 +69,7 @@ const FullPage = () => {
         >
           <MyWork />
           <MyProjects />
+          <Stacks />
           <ContactMe />
         </Flex>
       </Flex>

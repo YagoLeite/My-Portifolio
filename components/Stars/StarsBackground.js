@@ -18,7 +18,7 @@ const StarsBackground = () => {
     useTransform(scrollYProgress, [0, 1], [0, 30]),
   ];
   const xTransforms = [
-    useTransform(scrollYProgress, [0, 1], [0, 10]),
+    useTransform(scrollYProgress, [0, 1], [0, 50]),
     useTransform(scrollYProgress, [0, 1], [10, -15]),
     useTransform(scrollYProgress, [0, 1], [0, 20]),
     useTransform(scrollYProgress, [0, 1], [0, 25]),

@@ -18,7 +18,9 @@ const MyWork = () => {
       mt="50px"
       p="20px"
     >
-      <Text fontSize="30px">My work</Text>
+      <Text fontSize="30px" fontWeight="bold">
+        Where i worked
+      </Text>
       {workData.map((item, index) => (
         <ContainerWrapper key={index}>
           <Work data={item} />

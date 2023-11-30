@@ -9,11 +9,8 @@ const MyHero = () => {
     <Flex
       w="100%"
       h="100%"
-      //   minH="100vh"
       justify="top"
       align="left"
-      //   maxW="700px"
-    //   color="white"
       direction="column"
       gap="30px"
       position={["relative", "relative", "relative", "sticky", "sticky"]}
@@ -24,19 +21,22 @@ const MyHero = () => {
       pt="100px"
       zIndex={10}
     >
-          <Flex>
-      {"Hi, I'm Yago".split("").map((letter, index) => {
-        return (
-          <Flex key={index}>
-            {letter === " " ? (
-              <Text opacity={0}>aa</Text>
-            ) : (
-              <SingleLetter letter={letter} size={['45px',  '55px',  '60px']} />
-            )}
-          </Flex>
-        );
-      })}
-    </Flex>
+      <Flex>
+        {"Hi, I'm Yago".split("").map((letter, index) => {
+          return (
+            <Flex key={index}>
+              {letter === " " ? (
+                <Text opacity={0}>aa</Text>
+              ) : (
+                <SingleLetter
+                  letter={letter}
+                  size={["40px", "55px", "80px", "80px"]}
+                />
+              )}
+            </Flex>
+          );
+        })}
+      </Flex>
       <Flex w="100%" gap="30px">
         <Flex
           as={motion.div}
@@ -81,7 +81,7 @@ const MyHero = () => {
       </Flex>
       <Text
         fontSize={["20px", "24px", "24px"]}
-      >{`I'm a frontend developer and mathematician, skilled in bringing dynamic animations to web interfaces. My focus is on efficient, engaging user experiences. In my free time, I enjoy exploring new tech and solving complex problems. Ready and eager for new challenges in the world of development.`}</Text>
+      >{`Hey there! I'm your go-to for making web interfaces pop with awesome animations. Mixing frontend development with my math skills is where I shine. I’m all about creating smooth and catchy user experiences. Plus, I'm always on the lookout for the next big thing in tech and love tackling tough challenges in the dev world. Bring it on!`}</Text>
     </Flex>
   );
 };

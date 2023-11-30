@@ -11,8 +11,6 @@ const ContactMe = () => {
     <Flex
       w="100%"
       h="fit-content"
-      //   color="white"
-      //   color="#64ffda"
       direction="column"
       gap="30px"
       justify="center"
@@ -20,7 +18,9 @@ const ContactMe = () => {
       mt="50px"
       p="20px"
     >
-      <Text fontSize="30px">Contact me</Text>
+      <Text fontSize="30px" fontWeight="bold">
+        Contact me
+      </Text>
 
       <ContainerWrapper>
         <Flex w="100%" h="100%" direction="column" gap="10px">

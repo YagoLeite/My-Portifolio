@@ -40,7 +40,9 @@ const MyProjects = () => {
       gap="30px"
       p="20px"
     >
-      <Text fontSize="30px">My projects</Text>
+      <Text fontSize="30px" fontWeight="bold">
+        My projects
+      </Text>
       {projectData.map((item, index) => (
         <ContainerWrapper key={index}>
           <Project data={item} />
