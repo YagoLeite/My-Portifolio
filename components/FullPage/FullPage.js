@@ -25,6 +25,8 @@ const FullPage = () => {
       bg="black"
       position="relative"
       h={height}
+      //   color="#64ffda"
+      color="white"
     >
       <Flex
         position="sticky"

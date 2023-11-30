@@ -11,7 +11,8 @@ const ContactMe = () => {
     <Flex
       w="100%"
       h="fit-content"
-      color="white"
+      //   color="white"
+      //   color="#64ffda"
       direction="column"
       gap="30px"
       justify="center"

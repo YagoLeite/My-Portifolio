@@ -1,7 +1,7 @@
 import { Flex, Text } from "@chakra-ui/react";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import { FiGithub, FiLinkedin } from "react-icons/fi";
 
 const MyHero = () => {
@@ -13,7 +13,7 @@ const MyHero = () => {
       justify="top"
       align="left"
       //   maxW="700px"
-      color="white"
+    //   color="white"
       direction="column"
       gap="30px"
       position={["relative", "relative", "relative", "sticky", "sticky"]}
@@ -24,7 +24,19 @@ const MyHero = () => {
       pt="100px"
       zIndex={10}
     >
-      <Text fontSize="40px" fontWeight="extrabold">{`Hi, I'm Yago`}</Text>
+          <Flex>
+      {"Hi, I'm Yago".split("").map((letter, index) => {
+        return (
+          <Flex key={index}>
+            {letter === " " ? (
+              <Text opacity={0}>aa</Text>
+            ) : (
+              <SingleLetter letter={letter} size={['45px',  '55px',  '60px']} />
+            )}
+          </Flex>
+        );
+      })}
+    </Flex>
       <Flex w="100%" gap="30px">
         <Flex
           as={motion.div}
@@ -73,5 +85,41 @@ const MyHero = () => {
     </Flex>
   );
 };
+
+function SingleLetter ({ letter, size })  {
+    const controls = useAnimation();
+    const [isAnimationPlaying, setIsAnimationPlaying] = useState(false);
+  
+    const bump = {
+      visible: {
+        // These values may vary depending on your font size
+        scaleX: [1, 0.85, 1.15, 0.9, 1.05, 1],
+        scaleY: [1, 1.15, 0.85, 1.05, 0.9, 1],
+        y: ["0px", "-7px", "3px", "-3px", "2px", "0px"],
+        transition: {
+          duration: 1,
+          type: "spring",
+        },
+      },
+    };
+  
+    return (
+      <Text
+        as={motion.div}
+        fontSize={size}
+        animate={controls}
+        onHoverStart={() => {
+          if (!isAnimationPlaying) {
+            setIsAnimationPlaying(true);
+            controls.start(bump.visible);
+          }
+        }}
+        onAnimationComplete={() => setIsAnimationPlaying(false)}
+      >
+        {letter}
+      </Text>
+    );
+  };
+  
 
 export default MyHero;

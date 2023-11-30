@@ -33,7 +33,7 @@ const MyProjects = () => {
     <Flex
       w="100%"
       h="fit-content"
-      color="white"
+      // color="white"
       direction="column"
       justify="center"
       align="left"
@@ -84,6 +84,7 @@ function ProjectTag({ stack }) {
       borderRadius="10px"
       bg="#5a047d"
       fontSize={["13px", "14px", "15px"]}
+      color="white"
     >
       <Text>{stack}</Text>
     </Flex>

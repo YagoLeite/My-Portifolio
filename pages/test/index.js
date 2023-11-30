@@ -40,123 +40,124 @@
 //   },
 // ];
 
-// export default function Home() {
-//   return (
-//     <>
-//       <Head>
-//         <title>Yago Leite</title>
-//         <meta
-//           name="description"
-//           content="Yago Leite is a professional web developer specializing in modern JavaScript frameworks like Next.js., Framer Motion and Chakra UI"
-//         />
-//         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-//         <link rel="canonical" href="https://www.yagoleitedev.com.br" />
-//         <meta charSet="utf-8" />
-//       </Head>
-//       <Flex
-//         // bg="#0a192f"
-//         bg="black"
-//         color="#8892b0"
-//         position="relative"
-//         justifyContent="space-around"
-//         w="100%"
-//         px="20px"
-//       >
-//         <Flex
-//           display={["none", "none", "flex", "flex"]}
-//           height="300px"
-//           position="sticky"
-//           top="0"
-//           align="center"
-//           justify="top"
-//           direction="column"
-//           gap="30px"
-//         >
-//           <Divider orientation="vertical" h="120px" />
-//           <Flex direction="column" gap="25px">
-//             {iconsData.map((item, index) => {
-//               return (
-//                 <Link href={item.link} passHref legacyBehavior key={index}>
-//                   <a target="_blank">
-//                     <Flex
-//                       as={motion.div}
-//                       cursor="pointer"
-//                       whileHover={{
-//                         y: -4,
-//                         color: "#64ffda",
-//                         scale: 1.1,
-//                         transition: { duration: 0.2 },
-//                       }}
-//                     >
-//                       {item.icon}
-//                     </Flex>
-//                   </a>
-//                 </Link>
-//               );
-//             })}
-//           </Flex>
-//         </Flex>
-//         <Flex
-//           direction="column"
-//           fontFamily="Inter"
-//           maxW="900px"
-//           p="20px"
-//           gap="80px"
-//           justify="center"
-//           align="center"
-//           alignSelf="center"
-//         >
-//           <Hero />
-//           <AboutMe />
-//           <Work />
-//           <Flex direction="column" gap="50px" w="100%">
-//             <Flex w="100%" gap="20px" align="center">
-//               <Text color="#CCD6F6" fontSize="32px">{`My TOP projects`}</Text>
-//               <Divider
-//                 orientation="horizontal"
-//                 borderColor="#ccd6f6"
-//                 w="40%"
-//                 opacity={0.2}
-//               />
-//             </Flex>
+export default function Home() {
+  return (
+    <div></div>
+    // <>
+    //   <Head>
+    //     <title>Yago Leite</title>
+    //     <meta
+    //       name="description"
+    //       content="Yago Leite is a professional web developer specializing in modern JavaScript frameworks like Next.js., Framer Motion and Chakra UI"
+    //     />
+    //     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    //     <link rel="canonical" href="https://www.yagoleitedev.com.br" />
+    //     <meta charSet="utf-8" />
+    //   </Head>
+    //   <Flex
+    //     // bg="#0a192f"
+    //     bg="black"
+    //     color="#8892b0"
+    //     position="relative"
+    //     justifyContent="space-around"
+    //     w="100%"
+    //     px="20px"
+    //   >
+    //     <Flex
+    //       display={["none", "none", "flex", "flex"]}
+    //       height="300px"
+    //       position="sticky"
+    //       top="0"
+    //       align="center"
+    //       justify="top"
+    //       direction="column"
+    //       gap="30px"
+    //     >
+    //       <Divider orientation="vertical" h="120px" />
+    //       <Flex direction="column" gap="25px">
+    //         {iconsData.map((item, index) => {
+    //           return (
+    //             <Link href={item.link} passHref legacyBehavior key={index}>
+    //               <a target="_blank">
+    //                 <Flex
+    //                   as={motion.div}
+    //                   cursor="pointer"
+    //                   whileHover={{
+    //                     y: -4,
+    //                     color: "#64ffda",
+    //                     scale: 1.1,
+    //                     transition: { duration: 0.2 },
+    //                   }}
+    //                 >
+    //                   {item.icon}
+    //                 </Flex>
+    //               </a>
+    //             </Link>
+    //           );
+    //         })}
+    //       </Flex>
+    //     </Flex>
+    //     <Flex
+    //       direction="column"
+    //       fontFamily="Inter"
+    //       maxW="900px"
+    //       p="20px"
+    //       gap="80px"
+    //       justify="center"
+    //       align="center"
+    //       alignSelf="center"
+    //     >
+    //       <Hero />
+    //       <AboutMe />
+    //       <Work />
+    //       <Flex direction="column" gap="50px" w="100%">
+    //         <Flex w="100%" gap="20px" align="center">
+    //           <Text color="#CCD6F6" fontSize="32px">{`My TOP projects`}</Text>
+    //           <Divider
+    //             orientation="horizontal"
+    //             borderColor="#ccd6f6"
+    //             w="40%"
+    //             opacity={0.2}
+    //           />
+    //         </Flex>
 
-//             {data.map((item, idex) => (
-//               <Showcase data={item} key={idex} />
-//             ))}
-//           </Flex>
-//           {/* <Showcase /> */}
-//           <Projects />
-//           <Contact />
-//           <Footer />
-//         </Flex>
-//         <Flex
-//           display={["none", "none", "flex", "flex"]}
-//           height="300px"
-//           position="sticky"
-//           top="0"
-//           align="center"
-//           justify="top"
-//           direction="column"
-//           gap="30px"
-//         >
-//           <Divider orientation="vertical" h="120px" />
-//           <motion.p
-//             style={{
-//               writingMode: "vertical-lr",
-//               textOrientation: "mixed",
-//               fontSize: "11px",
-//               cursor: "pointer",
-//             }}
-//             whileHover={{
-//               y: 10,
-//               color: "#64ffda",
-//               transition: { duration: 0.2 },
-//             }}
-//           >
-//             yagoleitedev@gmail.com
-//           </motion.p>
-//         </Flex>
-//       </Flex>
-//     </>
-//   );
-// }
+    //         {data.map((item, idex) => (
+    //           <Showcase data={item} key={idex} />
+    //         ))}
+    //       </Flex>
+    //       {/* <Showcase /> */}
+    //       <Projects />
+    //       <Contact />
+    //       <Footer />
+    //     </Flex>
+    //     <Flex
+    //       display={["none", "none", "flex", "flex"]}
+    //       height="300px"
+    //       position="sticky"
+    //       top="0"
+    //       align="center"
+    //       justify="top"
+    //       direction="column"
+    //       gap="30px"
+    //     >
+    //       <Divider orientation="vertical" h="120px" />
+    //       <motion.p
+    //         style={{
+    //           writingMode: "vertical-lr",
+    //           textOrientation: "mixed",
+    //           fontSize: "11px",
+    //           cursor: "pointer",
+    //         }}
+    //         whileHover={{
+    //           y: 10,
+    //           color: "#64ffda",
+    //           transition: { duration: 0.2 },
+    //         }}
+    //       >
+    //         yagoleitedev@gmail.com
+    //       </motion.p>
+    //     </Flex>
+    //   </Flex>
+    // </>
+  );
+}
