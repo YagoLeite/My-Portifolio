@@ -114,3 +114,48 @@ export const secondProjects = [
     description: `This is a challenge from Frontend Mentor. It is my first website without help. My first after creating some with YouTube assistance. And I'm VERY proud of it. This project lead to my Golden stars in the future.`,
   },
 ];
+
+
+export const workData = [
+  {
+    name: "Younner",
+    title: "Frontend Dev",
+    date: "2022 - Present",
+    items: [
+      `Implemented responsive web designs, ensuring optimal performance across multiple device types.`,
+      "Implemented a successful API integration project which synchronized data across different services, enhancing overall system efficiency and reducing data redundancy.",
+      "Collaborate with designers, project managers, and other engineers to transform creative concepts into production realities for clients and stakeholders",
+      "Developed reusable components and front-end libraries for future use, increasing development speed and efficiency.",
+    ],
+  },
+  {
+    name: "The British School",
+    title: "Maths teacher",
+    date: "2018 - 2022",
+    items: [
+      `Worked on meeting educational standards and enlightening students`,
+      "Promoted student engagement and group learning.",
+      "Planned and delivered well-structured lessons which engaged and motivated students",
+      "Provided optimal instructions and academic support to students",
+    ],
+  },
+];
+
+export const projectData = [
+  {
+    name: "TopGain",
+    title: "Frontend Dev",
+    link: "http://www.topgain.com",
+    description:
+      "In my project with TopGain, a Brazilian company specializing in financial market education, I focused on enhancing user experience across their digital platforms. This involved streamlining the interface for their extensive course offerings and improving the interactivity of live market discussions and chat features. My efforts led to increased user engagement and a more intuitive learning environment, showcasing my skills in user-centered design and digital innovation in education.",
+    stacks: ["TypeScript", "NextJs", "Chakra UI", "TESTE"],
+  },
+  {
+    name: "Animation Store",
+    title: "Maths teacher",
+    link: "http://www.animationstore.dev",
+    description:
+      "Animation Store is a streamlined, user-friendly hub for developers to explore and acquire animations with ease. It boasts a vast collection of animations crafted using Chakra UI, Framer Motion, and React. Users can effortlessly view the source code of any animation and integrate it into their projects with just two clicks. Additionally, this platform encourages community engagement by allowing users to share their own animations, fostering a collaborative and innovative environment.",
+    stacks: ["JavaScript", "NextJs", "Chakra UI", "Framer Motion"],
+  },
+];

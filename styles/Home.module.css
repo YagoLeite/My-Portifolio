@@ -12,6 +12,11 @@
   align-items: center;
 }
 
+body {
+  position: relative
+}
+
+
 .footer {
   display: flex;
   flex: 1;
