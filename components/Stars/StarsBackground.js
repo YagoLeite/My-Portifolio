@@ -12,24 +12,19 @@ const StarsBackground = () => {
 
   const yTransforms = [
     useTransform(scrollYProgress, [0, 1], [20, 100]),
-    useTransform(scrollYProgress, [0, 1], [10, -105]),
+    useTransform(scrollYProgress, [0, 1], [10, 405]),
     useTransform(scrollYProgress, [0, 1], [0, 200]),
-    useTransform(scrollYProgress, [0, 1], [0, 25]),
-    useTransform(scrollYProgress, [0, 1], [0, 30]),
-  ];
-  const xTransforms = [
-    useTransform(scrollYProgress, [0, 1], [0, 50]),
-    useTransform(scrollYProgress, [0, 1], [10, -15]),
-    useTransform(scrollYProgress, [0, 1], [0, 20]),
-    useTransform(scrollYProgress, [0, 1], [0, 25]),
-    useTransform(scrollYProgress, [0, 1], [0, 30]),
+    useTransform(scrollYProgress, [0, 1], [30, 125]),
+    useTransform(scrollYProgress, [0, 1], [0, 130]),
+    useTransform(scrollYProgress, [0, 1], [100, 430]),
   ];
 
   const opacityTransforms = [
     useTransform(scrollYProgress, [0, 1], [1, 0]),
     useTransform(scrollYProgress, [1, 0], [1, 0.4]),
-    useTransform(scrollYProgress, [0.5, 1], [0.8, 0.2]),
-    useTransform(scrollYProgress, [0, 1], [0, 1]),
+    useTransform(scrollYProgress, [0.5, 1], [0.8, 0]),
+    useTransform(scrollYProgress, [0, 1], [1, 0.1]),
+    useTransform(scrollYProgress, [0, 1], [1, 0.3]),
   ];
 
   const generateStars = useCallback(() => {
@@ -47,7 +42,6 @@ const StarsBackground = () => {
         x: xPos,
         y: yPos,
         yTransform: yTransforms[yTransformIndex],
-        xTransform: xTransforms[yTransformIndex],
         opacityTransform: opacityTransforms[opacityTransformIndex],
       });
     }
@@ -72,7 +66,7 @@ const StarsBackground = () => {
             borderRadius: "50%",
             backgroundColor: "white",
             y: star.yTransform,
-            x: star.xTransform,
+            // x: star.xTransform,
             opacity: star.opacityTransform,
           }}
         />
