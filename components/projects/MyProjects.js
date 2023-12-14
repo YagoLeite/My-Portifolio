@@ -3,30 +3,6 @@ import React from "react";
 import ContainerWrapper from "../Wrapper/ContainerWrapper";
 import { projectData } from "../../constans/Constants";
 import Link from "next/link";
-const data = [
-  {
-    name: "Younner",
-    title: "Frontend Dev",
-    date: "2022 - Present",
-    items: [
-      `Implemented responsive web designs, ensuring optimal performance across multiple device types.`,
-      "Implemented a successful API integration project which synchronized data across different services, enhancing overall system efficiency and reducing data redundancy.",
-      "Collaborate with designers, project managers, and other engineers to transform creative concepts into production realities for clients and stakeholders",
-      "Developed reusable components and front-end libraries for future use, increasing development speed and efficiency.",
-    ],
-  },
-  {
-    name: "The British School",
-    title: "Maths teacher",
-    date: "2018 - 2022",
-    items: [
-      `Worked on meeting educational standards and enlightening students`,
-      "Promoted student engagement and group learning.",
-      "Planned and delivered well-structured lessons which engaged and motivated students",
-      "Provided optimal instructions and academic support to students",
-    ],
-  },
-];
 
 const MyProjects = () => {
   return (

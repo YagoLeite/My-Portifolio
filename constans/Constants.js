@@ -144,7 +144,7 @@ export const workData = [
 export const projectData = [
   {
     name: "TopGain",
-    link: "http://www.topgain.com",
+    link: "https://app.topgain.com/",
     description:
       "In my project with TopGain, a Brazilian company specializing in financial market education, I focused on enhancing user experience across their digital platforms. This involved streamlining the interface for their extensive course offerings and improving the interactivity of live market discussions and chat features. My efforts led to increased user engagement and a more intuitive learning environment, showcasing my skills in user-centered design and digital innovation in education.",
     stacks: ["TypeScript", "NextJs", "Chakra UI", "Agora.io"],
