@@ -22,7 +22,7 @@ Feel free to copy or use this project as a reference for your own portfolio! If 
 
 To run this project locally:
 
-1. Clone the repository: git clone https://github.com/your-username/portfolio-website.git
+1. Clone the repository: git clone https://github.com/YagoLeite/My-Portifolio.git
 2. Install dependencies: `npm install`
 3. Start the development server: `npm run dev`
 
