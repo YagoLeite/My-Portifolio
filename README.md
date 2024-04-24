@@ -6,7 +6,7 @@ Welcome to the repository for my personal portfolio website, accessible at [yago
 
 - **Next.js**: A React framework for building user-friendly and efficient web applications with server-side rendering capabilities for better performance and SEO.
 - **Chakra UI**: A simple, modular, and accessible component library that gives me the ability to design the website quickly and effectively while maintaining responsiveness and aesthetic appeal.
-- **Framer Motion**: An animation library for React that I use to animate modal and page transitions to enhance the user experience with smooth and engaging visual feedback.
+- **Framer Motion**: An animation library for React that I use to animate the moon, stars and some cards.
 
 ## Features
 
