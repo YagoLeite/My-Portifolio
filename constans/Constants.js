@@ -118,6 +118,20 @@ export const secondProjects = [
 
 export const workData = [
   {
+    name: "Iniciativa FIS",
+    title: "Frontend Dev",
+    date: "May 2024 - Present",
+    items: [
+      `Developed  a  centralized  event  management  platform  that  handles  the  registration  of 
+      conferences, speakers, tracks, and sessions, streamlining event coordination across multiple 
+      platforms.`,
+      " Built the official event mobile app using React Native, allowing attendees to browse speakers, view schedules, and track learning sessions in real-time during the event.",
+      "Engineered the seamless integration between the event app and the management platform, ensuring consistent data flow for event updates, speaker information, and session schedules.",
+      "Collaborated on the development of a ticketing platform, facilitating the distribution and purchase of event tickets, with real-time tracking of ticket availability and user registrations",
+      "Ensured smooth communication between the mobile app, management system, and ticketing platform enhancing the user experience for both event organizers and participants across web and mobile interfaces",
+    ],
+  },
+  {
     name: "Younner",
     title: "Frontend Dev",
     date: "Jun 2022 - Jul 2023",
